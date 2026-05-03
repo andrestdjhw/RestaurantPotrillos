@@ -2,11 +2,11 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/scripts/ExampleReactComponent.js":
+/***/ "./src/scripts/ExampleReactComponent.js"
 /*!**********************************************!*\
   !*** ./src/scripts/ExampleReactComponent.js ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -14,30 +14,1008 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
 function ExampleReactComponent() {
   const [clickCount, setClickCount] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-4 rounded-md",
-    onClick: () => setClickCount(prev => prev + 1)
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
-    className: "text-xl"
-  }, "Hello from React!"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "text-sm"
-  }, "You have clicked on this component", " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "text-yellow-200 font-bold"
-  }, clickCount), " times."));
+    onClick: () => setClickCount(prev => prev + 1),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+      className: "text-xl",
+      children: "Hello from React!"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+      className: "text-sm",
+      children: ["You have clicked on this component", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "text-yellow-200 font-bold",
+        children: clickCount
+      }), " times."]
+    })]
+  });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ExampleReactComponent);
 
-/***/ }),
+/***/ },
 
-/***/ "./src/scripts/Person.js":
+/***/ "./src/scripts/Footer.js"
+/*!*******************************!*\
+  !*** ./src/scripts/Footer.js ***!
+  \*******************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Footer() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+      children: `
+        .pfooter * { box-sizing: border-box; }
+        .pfooter { font-family: 'Lato', sans-serif; }
+
+        /* Food Truck block */
+        .pfooter-truck-link {
+          font-size: 0.82rem;
+          color: #C0392B;
+          text-decoration: none;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          transition: opacity 0.2s;
+        }
+        .pfooter-truck-link:hover { opacity: 0.75; }
+
+        /* Final CTA buttons */
+        .pfooter-cta-primary {
+          font-family: 'Oswald', sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-size: 0.82rem;
+          padding: 14px 28px;
+          border-radius: 3px;
+          text-decoration: none;
+          white-space: nowrap;
+          border: 2px solid #fff;
+          background: #fff;
+          color: #C0392B;
+          transition: background 0.2s, color 0.2s, transform 0.15s;
+          cursor: pointer;
+        }
+        .pfooter-cta-primary:hover {
+          background: transparent;
+          color: #fff;
+          transform: translateY(-2px);
+        }
+
+        .pfooter-cta-secondary {
+          font-family: 'Oswald', sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-size: 0.82rem;
+          padding: 14px 28px;
+          border-radius: 3px;
+          text-decoration: none;
+          white-space: nowrap;
+          border: 2px solid rgba(255,255,255,0.6);
+          background: transparent;
+          color: #fff;
+          transition: background 0.2s, border-color 0.2s, transform 0.15s;
+          cursor: pointer;
+        }
+        .pfooter-cta-secondary:hover {
+          background: rgba(255,255,255,0.12);
+          border-color: #fff;
+          transform: translateY(-2px);
+        }
+
+        /* Footer column links */
+        .pfooter-col-link {
+          color: #b0b0b0;
+          text-decoration: none;
+          font-size: 0.82rem;
+          line-height: 1.9;
+          transition: color 0.2s;
+          display: block;
+        }
+        .pfooter-col-link:hover { color: #fff; }
+
+        /* Footer column heading */
+        .pfooter-col-heading {
+          font-family: 'Oswald', sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 0.12em;
+          font-size: 0.7rem;
+          font-weight: 600;
+          color: #C0392B;
+          margin-bottom: 14px;
+        }
+
+        /* Social icons */
+        .pfooter-social {
+          display: flex;
+          gap: 12px;
+          margin-bottom: 20px;
+        }
+        .pfooter-social a {
+          width: 36px; height: 36px;
+          border-radius: 6px;
+          border: 1px solid rgba(255,255,255,0.15);
+          display: flex; align-items: center; justify-content: center;
+          color: #b0b0b0;
+          text-decoration: none;
+          transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+        .pfooter-social a:hover {
+          border-color: rgba(255,255,255,0.4);
+          color: #fff;
+          background: rgba(255,255,255,0.07);
+        }
+
+        /* Bottom bar links */
+        .pfooter-bottom-link {
+          color: #666;
+          text-decoration: none;
+          font-size: 0.7rem;
+          transition: color 0.2s;
+        }
+        .pfooter-bottom-link:hover { color: #aaa; }
+
+        /* Inline CTA links inside footer col */
+        .pfooter-order-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-family: 'Oswald', sans-serif;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-size: 0.72rem;
+          color: #fff;
+          text-decoration: none;
+          padding: 8px 14px;
+          border-radius: 3px;
+          border: 1px solid rgba(255,255,255,0.2);
+          background: rgba(255,255,255,0.06);
+          transition: background 0.2s, border-color 0.2s;
+          margin-top: 4px;
+        }
+        .pfooter-order-link:hover {
+          background: rgba(255,255,255,0.12);
+          border-color: rgba(255,255,255,0.4);
+        }
+
+        @media (max-width: 768px) {
+          .pfooter-truck-inner {
+            flex-direction: column !important;
+          }
+          .pfooter-truck-img {
+            width: 100% !important;
+            height: 180px !important;
+            object-fit: cover !important;
+            border-radius: 8px !important;
+          }
+          .pfooter-cta-buttons {
+            flex-direction: column !important;
+            align-items: center !important;
+          }
+          .pfooter-grid {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .pfooter-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .pfooter-bottom-bar {
+            flex-direction: column !important;
+            gap: 10px !important;
+            text-align: center !important;
+          }
+          .pfooter-bottom-links {
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+          }
+        }
+      `
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "pfooter",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        style: {
+          background: "#f7f4f0",
+          borderTop: "1px solid #ece8e2",
+          padding: "40px 24px"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          style: {
+            maxWidth: "1180px",
+            margin: "0 auto"
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "pfooter-truck-inner",
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: "32px"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: "",
+              alt: "Los Potrillos Food Truck",
+              className: "pfooter-truck-img",
+              style: {
+                width: "260px",
+                height: "160px",
+                objectFit: "cover",
+                borderRadius: "8px",
+                flexShrink: 0,
+                background: "#e8e2da"
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                style: {
+                  fontFamily: "'Oswald', sans-serif",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.14em",
+                  fontSize: "0.65rem",
+                  fontWeight: 600,
+                  color: "#C0392B",
+                  marginBottom: "6px",
+                  margin: "0 0 6px 0"
+                },
+                children: "Also catch us on the streets"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+                style: {
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: "1.35rem",
+                  fontWeight: 600,
+                  color: "#1a1a1a",
+                  margin: "0 0 8px 0",
+                  lineHeight: 1.25
+                },
+                children: "Find Our Food Truck Around Philadelphia"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                style: {
+                  fontSize: "0.85rem",
+                  color: "#666",
+                  margin: "0 0 12px 0",
+                  lineHeight: 1.6
+                },
+                children: "We bring the Puebla flavor to events, festivals, and locations across the city."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/food-truck",
+                className: "pfooter-truck-link",
+                children: "See where the truck is today \u2192"
+              })]
+            })]
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        style: {
+          background: "#C0392B",
+          padding: "64px 24px",
+          textAlign: "center"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            maxWidth: "700px",
+            margin: "0 auto"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+            style: {
+              fontFamily: "'Oswald', sans-serif",
+              fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
+              fontWeight: 700,
+              color: "#fff",
+              lineHeight: 1.2,
+              margin: "0 0 32px 0",
+              letterSpacing: "0.01em"
+            },
+            children: "Hungry Yet? Order Now \u2014 Or Plan Your Next Event With Us."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "pfooter-cta-buttons",
+            style: {
+              display: "flex",
+              justifyContent: "center",
+              gap: "16px",
+              flexWrap: "wrap"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/order",
+              className: "pfooter-cta-primary",
+              children: "Order Pickup Now \u2192"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/catering-quote",
+              className: "pfooter-cta-secondary",
+              children: "Get a Catering Quote \u2192"
+            })]
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          background: "#111111",
+          padding: "60px 24px 0"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          style: {
+            maxWidth: "1180px",
+            margin: "0 auto"
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "pfooter-grid",
+            style: {
+              display: "grid",
+              gridTemplateColumns: "1.4fr 1fr 1fr 1fr",
+              gap: "40px",
+              paddingBottom: "48px"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/",
+                style: {
+                  display: "inline-block",
+                  marginBottom: "18px",
+                  lineHeight: 0
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+                  src: "",
+                  alt: "Los Potrillos",
+                  style: {
+                    height: "52px",
+                    width: "auto",
+                    display: "block"
+                  }
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                style: {
+                  fontSize: "0.82rem",
+                  color: "#b0b0b0",
+                  lineHeight: 1.7,
+                  margin: "0 0 10px 0"
+                },
+                children: "Authentic Puebla-style Mexican food, made fresh in Philadelphia."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                style: {
+                  fontSize: "0.78rem",
+                  color: "#666",
+                  lineHeight: 1.6,
+                  fontStyle: "italic",
+                  margin: 0
+                },
+                children: "Family-owned. Family-run. Family-fed."
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "pfooter-col-heading",
+                children: "Visit Us"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("address", {
+                style: {
+                  fontStyle: "normal"
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+                  href: "https://maps.google.com/?q=2617+E+Venango+St+Philadelphia+PA",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  className: "pfooter-col-link",
+                  children: ["2617 E Venango St", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "Philadelphia, PA 19134"]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+                style: {
+                  fontSize: "0.82rem",
+                  color: "#b0b0b0",
+                  lineHeight: 1.9,
+                  margin: "12px 0 0 0"
+                },
+                children: ["Mon\u2013Sat: 10am \u2013 9pm", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  style: {
+                    color: "#666"
+                  },
+                  children: "Sunday: Closed"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "tel:+12673232669",
+                className: "pfooter-col-link",
+                style: {
+                  marginTop: "10px"
+                },
+                children: "(267) 323-2669"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "pfooter-col-heading",
+                children: "Explore"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
+                style: {
+                  display: "flex",
+                  flexDirection: "column"
+                },
+                children: [{
+                  label: "Menu",
+                  href: "/menu"
+                }, {
+                  label: "Catering",
+                  href: "/catering"
+                }, {
+                  label: "Our Story",
+                  href: "/our-story"
+                }, {
+                  label: "Careers",
+                  href: "/careers"
+                }, {
+                  label: "Contact",
+                  href: "/contact"
+                }].map(({
+                  label,
+                  href
+                }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                  href: href,
+                  className: "pfooter-col-link",
+                  children: label
+                }, label))
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "pfooter-col-heading",
+                children: "Follow Us"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "pfooter-social",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                  href: "https://instagram.com",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  "aria-label": "Instagram",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                    width: "17",
+                    height: "17",
+                    viewBox: "0 0 24 24",
+                    fill: "currentColor",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                      d: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    })
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                  href: "https://facebook.com",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  "aria-label": "Facebook",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                    width: "17",
+                    height: "17",
+                    viewBox: "0 0 24 24",
+                    fill: "currentColor",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                      d: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    })
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                  href: "https://tiktok.com",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  "aria-label": "TikTok",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                    width: "17",
+                    height: "17",
+                    viewBox: "0 0 24 24",
+                    fill: "currentColor",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                      d: "M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                    })
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "pfooter-col-heading",
+                style: {
+                  marginBottom: "8px"
+                },
+                children: "Order Online"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/order",
+                className: "pfooter-order-link",
+                style: {
+                  marginBottom: "18px",
+                  display: "inline-flex"
+                },
+                children: "Order Pickup \u2192"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "pfooter-col-heading",
+                style: {
+                  marginTop: "16px",
+                  marginBottom: "8px"
+                },
+                children: "Catering"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/catering-quote",
+                className: "pfooter-order-link",
+                children: "Get a Quote \u2192"
+              })]
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          style: {
+            borderTop: "1px solid #222",
+            padding: "18px 24px"
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "pfooter-bottom-bar",
+            style: {
+              maxWidth: "1180px",
+              margin: "0 auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "12px"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              style: {
+                fontSize: "0.68rem",
+                color: "#555",
+                margin: 0
+              },
+              children: "\xA9 2026 Los Potrillos Restaurant Inc. All rights reserved."
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "pfooter-bottom-links",
+              style: {
+                display: "flex",
+                gap: "18px"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/privacy-policy",
+                className: "pfooter-bottom-link",
+                children: "Privacy Policy"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/terms-conditions",
+                className: "pfooter-bottom-link",
+                children: "Terms & Conditions"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/sitemap",
+                className: "pfooter-bottom-link",
+                children: "Site Map"
+              })]
+            })]
+          })
+        })]
+      })]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+
+/***/ },
+
+/***/ "./src/scripts/Navbar.js"
+/*!*******************************!*\
+  !*** ./src/scripts/Navbar.js ***!
+  \*******************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Navbar() {
+  const [scrolled, setScrolled] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [menuOpen, setMenuOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Lato:wght@400;700&display=swap";
+    document.head.appendChild(link);
+    const onScroll = () => setScrolled(window.scrollY > 200);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const navLinks = [{
+    label: "Home",
+    href: "/"
+  }, {
+    label: "Menu",
+    href: "/menu"
+  }, {
+    label: "Catering",
+    href: "/catering"
+  }, {
+    label: "Our Story",
+    href: "/our-story"
+  }, {
+    label: "Contact",
+    href: "/contact"
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+      children: `
+        .pnav * { box-sizing: border-box; }
+        .pnav { font-family: 'Lato', sans-serif; }
+
+        .pnav-link {
+          font-family: 'Oswald', sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 0.09em;
+          font-size: 0.78rem;
+          font-weight: 500;
+          color: #1a1a1a;
+          text-decoration: none;
+          position: relative;
+          padding-bottom: 3px;
+          transition: color 0.2s;
+        }
+        .pnav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -1px; left: 0;
+          width: 0; height: 2px;
+          background: #C0392B;
+          transition: width 0.25s ease;
+        }
+        .pnav-link:hover { color: #C0392B; }
+        .pnav-link:hover::after { width: 100%; }
+
+        .pnav-util-link {
+          color: #444;
+          text-decoration: none;
+          font-size: 0.71rem;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          transition: color 0.2s;
+        }
+        .pnav-util-link:hover { color: #C0392B; }
+
+        .pnav-cta-primary {
+          font-family: 'Oswald', sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-size: 0.72rem;
+          padding: 9px 18px;
+          border-radius: 3px;
+          text-decoration: none;
+          white-space: nowrap;
+          border: 2px solid #C0392B;
+          background: #C0392B;
+          color: #fff;
+          transition: background 0.2s, border-color 0.2s, transform 0.15s;
+          cursor: pointer;
+        }
+        .pnav-cta-primary:hover {
+          background: #a93226;
+          border-color: #a93226;
+          transform: translateY(-1px);
+        }
+
+        .pnav-cta-secondary {
+          font-family: 'Oswald', sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-size: 0.72rem;
+          padding: 9px 18px;
+          border-radius: 3px;
+          text-decoration: none;
+          white-space: nowrap;
+          border: 2px solid #1a1a1a;
+          background: transparent;
+          color: #1a1a1a;
+          transition: background 0.2s, color 0.2s, transform 0.15s;
+          cursor: pointer;
+        }
+        .pnav-cta-secondary:hover {
+          background: #1a1a1a;
+          color: #fff;
+          transform: translateY(-1px);
+        }
+
+        .pnav-mobile-enter {
+          animation: pnavSlideDown 0.22s ease forwards;
+        }
+        @keyframes pnavSlideDown {
+          from { opacity: 0; transform: translateY(-6px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+          .pnav-desktop-links { display: none !important; }
+          .pnav-hamburger      { display: flex !important; }
+        }
+        @media (min-width: 901px) {
+          .pnav-mobile-menu    { display: none !important; }
+        }
+        @media (max-width: 600px) {
+          .pnav-util-address { display: none; }
+          .pnav-cta-primary, .pnav-cta-secondary {
+            font-size: 0.65rem !important;
+            padding: 8px 11px !important;
+          }
+        }
+        @media (max-width: 380px) {
+          .pnav-cta-secondary { display: none !important; }
+        }
+      `
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "pnav",
+      style: {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        boxShadow: scrolled ? "0 2px 16px rgba(0,0,0,0.12)" : "none",
+        transition: "box-shadow 0.35s ease"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        style: {
+          background: "#f5f5f5",
+          borderBottom: "1px solid #e0e0e0",
+          padding: "6px 0",
+          maxHeight: scrolled ? "0" : "44px",
+          overflow: "hidden",
+          transition: "max-height 0.35s ease"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            maxWidth: "1180px",
+            margin: "0 auto",
+            padding: "0 24px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "8px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: "/",
+            style: {
+              lineHeight: 0,
+              flexShrink: 0
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: "/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png",
+              alt: "Los Potrillos",
+              style: {
+                height: "28px",
+                width: "auto",
+                display: "block"
+              }
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: "20px"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: "tel:+12673232669",
+              className: "pnav-util-link",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                width: "11",
+                height: "11",
+                viewBox: "0 0 24 24",
+                fill: "#C0392B",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                })
+              }), "(267) 323-2669"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              className: "pnav-util-link",
+              style: {
+                cursor: "default"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                width: "11",
+                height: "11",
+                viewBox: "0 0 24 24",
+                fill: "#C0392B",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"
+                })
+              }), "Mon \u2013 Sat \xA0 10am \u2013 9pm"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: "https://maps.google.com/?q=2617+E+Venango+St+Philadelphia+PA",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "pnav-util-link pnav-util-address",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                width: "11",
+                height: "11",
+                viewBox: "0 0 24 24",
+                fill: "#C0392B",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                })
+              }), "2617 E Venango St, Philadelphia, PA"]
+            })]
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          background: "#ffffff",
+          borderBottom: "1px solid #e8e8e8",
+          padding: scrolled ? "10px 0" : "14px 0",
+          transition: "padding 0.35s ease"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            maxWidth: "1180px",
+            margin: "0 auto",
+            padding: "0 24px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "16px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: "/",
+            style: {
+              flexShrink: 0,
+              lineHeight: 0
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: "/wp-content/uploads/2026/05/Los-Potrillos-_WB-scaled.png",
+              alt: "Los Potrillos",
+              style: {
+                height: scrolled ? "42px" : "54px",
+                width: "auto",
+                transition: "height 0.35s ease",
+                display: "block"
+              }
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
+            className: "pnav-desktop-links",
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: "30px"
+            },
+            children: navLinks.map(({
+              label,
+              href
+            }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: href,
+              className: "pnav-link",
+              children: label
+            }, label))
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              flexShrink: 0
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/order",
+              className: "pnav-cta-primary",
+              children: "Order Pickup"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/catering-quote",
+              className: "pnav-cta-secondary",
+              children: "Catering Quote"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              onClick: () => setMenuOpen(o => !o),
+              "aria-label": menuOpen ? "Close menu" : "Open menu",
+              className: "pnav-hamburger",
+              style: {
+                display: "none",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                padding: "4px",
+                color: "#1a1a1a",
+                marginLeft: "4px"
+              },
+              children: menuOpen ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "22",
+                height: "22",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2.5",
+                strokeLinecap: "round",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                  x1: "18",
+                  y1: "6",
+                  x2: "6",
+                  y2: "18"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                  x1: "6",
+                  y1: "6",
+                  x2: "18",
+                  y2: "18"
+                })]
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "22",
+                height: "22",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2.5",
+                strokeLinecap: "round",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                  x1: "3",
+                  y1: "7",
+                  x2: "21",
+                  y2: "7"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                  x1: "3",
+                  y1: "12",
+                  x2: "21",
+                  y2: "12"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                  x1: "3",
+                  y1: "17",
+                  x2: "21",
+                  y2: "17"
+                })]
+              })
+            })]
+          })]
+        }), menuOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "pnav-mobile-menu pnav-mobile-enter",
+          style: {
+            background: "#ffffff",
+            borderTop: "1px solid #ebebeb",
+            padding: "8px 24px 20px"
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
+            style: {
+              display: "flex",
+              flexDirection: "column"
+            },
+            children: navLinks.map(({
+              label,
+              href
+            }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: href,
+              onClick: () => setMenuOpen(false),
+              style: {
+                fontFamily: "'Oswald', sans-serif",
+                textTransform: "uppercase",
+                letterSpacing: "0.09em",
+                fontSize: "0.88rem",
+                fontWeight: 500,
+                color: "#1a1a1a",
+                textDecoration: "none",
+                padding: "11px 0",
+                borderBottom: "1px solid #f0f0f0",
+                transition: "color 0.2s"
+              },
+              onMouseEnter: e => e.currentTarget.style.color = "#C0392B",
+              onMouseLeave: e => e.currentTarget.style.color = "#1a1a1a",
+              children: label
+            }, label))
+          })
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      style: {
+        height: scrolled ? "64px" : "112px",
+        transition: "height 0.35s ease"
+      }
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);
+
+/***/ },
+
+/***/ "./src/scripts/Person.js"
 /*!*******************************!*\
   !*** ./src/scripts/Person.js ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -54,59 +1032,37 @@ class Person {
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Person);
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/react-dom/client.js":
-/*!******************************************!*\
-  !*** ./node_modules/react-dom/client.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-
-var m = __webpack_require__(/*! react-dom */ "react-dom");
-if (false) {} else {
-  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-  exports.createRoot = function(c, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.createRoot(c, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-  exports.hydrateRoot = function(c, h, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.hydrateRoot(c, h, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-}
-
-
-/***/ }),
-
-/***/ "react":
+/***/ "react"
 /*!************************!*\
   !*** external "React" ***!
   \************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = window["React"];
 
-/***/ }),
+/***/ },
 
-/***/ "react-dom":
+/***/ "react-dom/client"
 /*!***************************!*\
   !*** external "ReactDOM" ***!
   \***************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = window["ReactDOM"];
 
-/***/ })
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -128,6 +1084,12 @@ module.exports = window["ReactDOM"];
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
@@ -177,26 +1139,41 @@ module.exports = window["ReactDOM"];
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _scripts_Person__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/Person */ "./src/scripts/Person.js");
-/* harmony import */ var _scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/ExampleReactComponent */ "./src/scripts/ExampleReactComponent.js");
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _scripts_Person__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/Person */ "./src/scripts/Person.js");
+/* harmony import */ var _scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/ExampleReactComponent */ "./src/scripts/ExampleReactComponent.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom/client */ "react-dom/client");
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom_client__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _scripts_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/Navbar */ "./src/scripts/Navbar.js");
+/* harmony import */ var _scripts_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scripts/Footer */ "./src/scripts/Footer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
 
 
-const person1 = new _scripts_Person__WEBPACK_IMPORTED_MODULE_1__["default"]("Brad");
+
+
+const person1 = new _scripts_Person__WEBPACK_IMPORTED_MODULE_0__["default"]("Brad");
 if (document.querySelector("#render-react-example-here")) {
-  const root = react_dom_client__WEBPACK_IMPORTED_MODULE_3__.createRoot(document.querySelector("#render-react-example-here"));
-  root.render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  const root = react_dom_client__WEBPACK_IMPORTED_MODULE_3___default().createRoot(document.querySelector("#render-react-example-here"));
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
+}
+if (document.querySelector("#render-navbar-here")) {
+  const root = react_dom_client__WEBPACK_IMPORTED_MODULE_3___default().createRoot(document.querySelector("#render-navbar-here"));
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {}));
+}
+if (document.querySelector("#render-footer-here")) {
+  const root = react_dom_client__WEBPACK_IMPORTED_MODULE_3___default().createRoot(document.querySelector("#render-footer-here"));
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {}));
 }
 })();
 
