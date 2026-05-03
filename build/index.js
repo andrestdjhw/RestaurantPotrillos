@@ -248,7 +248,7 @@ function Footer() {
               gap: "32px"
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-              src: "",
+              src: "/wp-content/uploads/2026/05/FoodTruck-scaled.jpg",
               alt: "Los Potrillos Food Truck",
               className: "pfooter-truck-img",
               style: {
@@ -366,7 +366,7 @@ function Footer() {
                   lineHeight: 0
                 },
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-                  src: "",
+                  src: "/wp-content/uploads/2026/05/PotrillosNegativeBrandLogo-scaled.png",
                   alt: "Los Potrillos",
                   style: {
                     height: "52px",

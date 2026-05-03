@@ -195,7 +195,7 @@ function Footer() {
             >
               {/* Truck image */}
               <img
-                src=""
+                src="/wp-content/uploads/2026/05/FoodTruck-scaled.jpg"
                 alt="Los Potrillos Food Truck"
                 className="pfooter-truck-img"
                 style={{
@@ -293,7 +293,7 @@ function Footer() {
               <div>
                 <a href="/" style={{ display: "inline-block", marginBottom: "18px", lineHeight: 0 }}>
                   <img
-                    src=""
+                    src="/wp-content/uploads/2026/05/PotrillosNegativeBrandLogo-scaled.png"
                     alt="Los Potrillos"
                     style={{ height: "52px", width: "auto", display: "block" }}
                   />
