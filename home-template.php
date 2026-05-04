@@ -339,7 +339,7 @@ get_header(); ?>
 <!-- ═══════════════════════════════════════════════
   4.6 — OUR STORY
 ═══════════════════════════════════════════════ -->
-<section class="hp-story">
+<!-- <section class="hp-story">
 
   <div class="hp-story-img">
     <img src="/wp-content/uploads/2026/05/Los-Potrillos-_Logos_page-0001-scaled-e1777837318744.jpg" alt="Los Potrillos family — brothers at the restaurant storefront in Port Richmond, Philadelphia">
@@ -372,7 +372,7 @@ get_header(); ?>
     </a>
   </div>
 
-</section>
+</section> -->
 
 
 <!-- ═══════════════════════════════════════════════

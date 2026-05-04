@@ -4,6 +4,7 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import Navbar from "./scripts/Navbar"
 import Footer from "./scripts/Footer"
+import CateringForm from "./scripts/CateringForm"
 
 
 const person1 = new Person("Brad")
@@ -21,3 +22,4 @@ if (document.querySelector("#render-footer-here")) {
   const root = ReactDOM.createRoot(document.querySelector("#render-footer-here"))
   root.render(<Footer />)
 }
+
