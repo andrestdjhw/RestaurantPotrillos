@@ -196,6 +196,105 @@ get_header(); ?>
 
 
 <!-- ═══════════════════════════════════════════════
+  FEATURED DISHES
+═══════════════════════════════════════════════ -->
+<section style="background:#f7f4f0;padding:72px 24px;">
+  <div style="max-width:1180px;margin:0 auto;">
+
+    <div style="text-align:center;margin-bottom:48px;">
+      <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.18em;font-size:0.62rem;font-weight:600;color:#C0392B;margin:0 0 12px 0;">Most Popular</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:800;color:#1a1a1a;margin:0;letter-spacing:-0.01em;line-height:1.2;">
+        Start With the Best
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+      <!-- CARD 1 — Birria Tacos -->
+      <div style="background:#fff;border:1px solid #ece8e2;border-radius:4px;overflow:hidden;transition:transform 0.28s ease,box-shadow 0.28s ease;"
+        onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="height:220px;overflow:hidden;">
+          <img src="/wp-content/uploads/2026/05/TacosBirreaHero-scaled.png" alt="Birria Tacos — Los Potrillos"
+            style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="padding:22px 24px 26px;">
+          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;font-weight:600;color:#C0392B;margin:0 0 6px 0;">Birria</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Birria Tacos</h3>
+          <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Slow-cooked beef, Oaxacan cheese, consomé for dipping. Made fresh every morning.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$15.00</span>
+            <a href="https://los-potrillos-restaurant.cloveronline.com/menu/beef-birria-tacos-3-VQ29EAFQAYXHR"
+              style="font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;padding:9px 18px;border-radius:3px;text-decoration:none;border:2px solid #C0392B;background:#C0392B;color:#fff;transition:background 0.2s;white-space:nowrap;"
+              onmouseover="this.style.background='#a93226';this.style.borderColor='#a93226'"
+              onmouseout="this.style.background='#C0392B';this.style.borderColor='#C0392B'">
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 — Birria Quesadilla -->
+      <div style="background:#fff;border:1px solid #ece8e2;border-radius:4px;overflow:hidden;transition:transform 0.28s ease,box-shadow 0.28s ease;"
+        onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="height:220px;overflow:hidden;">
+          <img src="/wp-content/uploads/2026/05/QuesaBirria-scaled.png" alt="Birria Quesadilla — Los Potrillos"
+            style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="padding:22px 24px 26px;">
+          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;font-weight:600;color:#C0392B;margin:0 0 6px 0;">Birria</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Birria Quesadilla</h3>
+          <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Hand-pressed quesadilla filled with our signature birria and melted Oaxacan cheese.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$15.00</span>
+            <a href="https://los-potrillos-restaurant.cloveronline.com/menu/beef-birria-quesadilla-5RS5Q193RGP2M"
+              style="font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;padding:9px 18px;border-radius:3px;text-decoration:none;border:2px solid #C0392B;background:#C0392B;color:#fff;transition:background 0.2s;white-space:nowrap;"
+              onmouseover="this.style.background='#a93226';this.style.borderColor='#a93226'"
+              onmouseout="this.style.background='#C0392B';this.style.borderColor='#C0392B'">
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 — Birria Torta -->
+      <div style="background:#fff;border:1px solid #ece8e2;border-radius:4px;overflow:hidden;transition:transform 0.28s ease,box-shadow 0.28s ease;"
+        onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="height:220px;overflow:hidden;">
+          <img src="/wp-content/uploads/2026/05/BirriaTorta-scaled.png" alt="Birria Torta — Los Potrillos"
+            style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="padding:22px 24px 26px;">
+          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;font-weight:600;color:#C0392B;margin:0 0 6px 0;">Birria</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Birria Torta</h3>
+          <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Telera roll, slow-cooked birria, Oaxacan cheese, avocado, and chipotle crema.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$15.00</span>
+            <a href="https://los-potrillos-restaurant.cloveronline.com/menu/birria-torta-DPDE6PM6CAK0T"
+              style="font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;padding:9px 18px;border-radius:3px;text-decoration:none;border:2px solid #C0392B;background:#C0392B;color:#fff;transition:background 0.2s;white-space:nowrap;"
+              onmouseover="this.style.background='#a93226';this.style.borderColor='#a93226'"
+              onmouseout="this.style.background='#C0392B';this.style.borderColor='#C0392B'">
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <style>
+      @media (max-width: 768px) {
+        .hp-featured-grid { grid-template-columns: 1fr !important; }
+      }
+    </style>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
   4.3 — THE TWO PILLARS
 ═══════════════════════════════════════════════ -->
 <section class="hp-pillars">
