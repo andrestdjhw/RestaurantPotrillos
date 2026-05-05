@@ -108,7 +108,7 @@ get_header(); ?>
   </div>
 
   <div class="os-hero-img">
-    <img src="" alt="Los Potrillos — the brothers at the restaurant storefront in Port Richmond, Philadelphia">
+    <img src="/wp-content/uploads/2026/05/Los-Potrillos-_Logos_page-0001-scaled-e1777837318744.jpg" alt="Los Potrillos — the brothers at the restaurant storefront in Port Richmond, Philadelphia">
   </div>
 
 </section>
@@ -230,7 +230,7 @@ get_header(); ?>
 <section class="os-split">
 
   <div class="os-split-img">
-    <img src="" alt="Los Potrillos birria — slow cooked 12 hours, family recipe from Puebla">
+    <img src="/wp-content/uploads/2026/05/TacosBirreaHero-scaled.png" alt="Los Potrillos birria — slow cooked 12 hours, family recipe from Puebla">
   </div>
 
   <div class="os-split-text" style="background:#1a0800;">
@@ -273,7 +273,7 @@ get_header(); ?>
     </div>
 
     <div style="position:relative;overflow:hidden;border-radius:4px;max-height:560px;">
-      <img src="" alt="Los Potrillos team and family — Port Richmond Philadelphia"
+      <img src="/wp-content/uploads/2026/05/CookingStaff-scaled.jpg" alt="Los Potrillos team and family — Port Richmond Philadelphia"
         style="width:100%;height:100%;object-fit:cover;display:block;">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 50%);"></div>
       <div style="position:absolute;bottom:0;left:0;right:0;padding:36px 40px;">
