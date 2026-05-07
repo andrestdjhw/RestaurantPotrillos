@@ -210,7 +210,7 @@ get_header(); ?>
       <p class="co-eyebrow">Follow Us</p>
       <div style="display:flex;gap:12px;">
 
-        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"
+        <a href="https://www.instagram.com/potrillosrestaurantphilly/" target="_blank" rel="noopener" aria-label="Instagram"
           style="width:40px;height:40px;border-radius:6px;border:1px solid #e8e2d8;display:flex;align-items:center;justify-content:center;color:#888;transition:color 0.2s,border-color 0.2s;"
           onmouseover="this.style.color='#C0392B';this.style.borderColor='#C0392B'"
           onmouseout="this.style.color='#888';this.style.borderColor='#e8e2d8'">
@@ -219,7 +219,7 @@ get_header(); ?>
           </svg>
         </a>
 
-        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"
+        <a href="https://www.facebook.com/lospotrillosrestaurantphilly" target="_blank" rel="noopener" aria-label="Facebook"
           style="width:40px;height:40px;border-radius:6px;border:1px solid #e8e2d8;display:flex;align-items:center;justify-content:center;color:#888;transition:color 0.2s,border-color 0.2s;"
           onmouseover="this.style.color='#C0392B';this.style.borderColor='#C0392B'"
           onmouseout="this.style.color='#888';this.style.borderColor='#e8e2d8'">
@@ -228,7 +228,7 @@ get_header(); ?>
           </svg>
         </a>
 
-        <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"
+        <a href="https://www.tiktok.com/@lospotrillosrestaurant" target="_blank" rel="noopener" aria-label="TikTok"
           style="width:40px;height:40px;border-radius:6px;border:1px solid #e8e2d8;display:flex;align-items:center;justify-content:center;color:#888;transition:color 0.2s,border-color 0.2s;"
           onmouseover="this.style.color='#C0392B';this.style.borderColor='#C0392B'"
           onmouseout="this.style.color='#888';this.style.borderColor='#e8e2d8'">

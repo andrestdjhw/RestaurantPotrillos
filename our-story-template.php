@@ -233,18 +233,18 @@ get_header(); ?>
     <img src="/wp-content/uploads/2026/05/TacosBirreaHero-scaled.png" alt="Los Potrillos birria — slow cooked 12 hours, family recipe from Puebla">
   </div>
 
-  <div class="os-split-text" style="background:#1a0800;">
-    <p class="os-eyebrow" style="color:rgba(212,160,23,0.85);">The Recipe</p>
+  <div class="os-split-text" style="background:#f7f4f0;">
+    <p class="os-eyebrow">The Recipe</p>
 
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#fff;line-height:1.2;margin:0 0 24px 0;letter-spacing:-0.01em;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#1a1a1a;line-height:1.2;margin:0 0 24px 0;letter-spacing:-0.01em;">
       The Birria That Started Everything
     </h2>
 
-    <p style="font-family:'Lato',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.95;margin:0 0 16px 0;">
+    <p style="font-family:'Lato',sans-serif;font-size:0.9rem;color:#555;line-height:1.95;margin:0 0 16px 0;">
       The birria recipe was not written down. It was passed from their mother's hands to theirs — in the way she added the chiles, the way she judged the braise by the smell, the way she knew when it was ready without checking a clock.
     </p>
 
-    <p style="font-family:'Lato',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.95;margin:0 0 32px 0;">
+    <p style="font-family:'Lato',sans-serif;font-size:0.9rem;color:#555;line-height:1.95;margin:0 0 32px 0;">
       Twelve hours. Real chiles. A consomé that takes all day to build. Tortillas dipped and crisped on the plancha. This is not a shortcut version of birria. This is the original.
     </p>
 
@@ -273,7 +273,7 @@ get_header(); ?>
     </div>
 
     <div style="position:relative;overflow:hidden;border-radius:4px;max-height:560px;">
-      <img src="/wp-content/uploads/2026/05/CookingStaff-scaled.jpg" alt="Los Potrillos team and family — Port Richmond Philadelphia"
+      <img src="http://restaurantpotrillos.local/wp-content/uploads/2026/05/CookingStaff-scaled.jpg" alt="Los Potrillos team and family — Port Richmond Philadelphia"
         style="width:100%;height:100%;object-fit:cover;display:block;">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 50%);"></div>
       <div style="position:absolute;bottom:0;left:0;right:0;padding:36px 40px;">

@@ -60,6 +60,7 @@ function Navbar() {
           align-items: center;
           gap: 5px;
           transition: color 0.2s;
+          white-space: nowrap;
         }
         .pnav-util-link:hover { color: #C0392B; }
 
@@ -160,23 +161,53 @@ function Navbar() {
         <div style={{
           background:   "#f5f5f5",
           borderBottom: "1px solid #e0e0e0",
-          padding:      "6px 0",
-          maxHeight:    scrolled ? "0" : "44px",
-          overflow:     "hidden",
-          transition:   "max-height 0.35s ease",
+          padding:      "10px 0",
+
         }}>
           <div style={{
-            maxWidth:       "1180px",
+            maxWidth:       "1440px",
             margin:         "0 auto",
-            padding:        "0 24px",
+            padding:        "0 32px",
             display:        "flex",
             alignItems:     "center",
             justifyContent: "space-between",
-            gap:            "8px",
+            gap:            "16px",
           }}>
 
-            {/* Social icons — TikTok, Instagram, Facebook */}
-            <div style={{ display: "flex", alignItems: "center", gap: "14px", flexShrink: 0 }}>
+            {/* LEFT — Phone + Hours */}
+            <div style={{ display: "flex", alignItems: "center", gap: "20px", flexShrink: 0 }}>
+              <a href="tel:+12673232669" className="pnav-util-link">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="#C0392B">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                (267) 323-2669
+              </a>
+
+              <span className="pnav-util-link" style={{ cursor: "default" }}>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="#C0392B">
+                  <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
+                </svg>
+                Mon – Sat &nbsp; 10am – 9pm
+              </span>
+            </div>
+
+            {/* CENTER — Address */}
+            <div style={{ display: "flex", justifyContent: "center", flex: 1 }}>
+              <a
+                href="https://maps.google.com/?q=2617+E+Venango+St+Philadelphia+PA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pnav-util-link pnav-util-address"
+              >
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="#C0392B">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                2617 E Venango St, Philadelphia, PA
+              </a>
+            </div>
+
+            {/* RIGHT — Social icons */}
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", flexShrink: 0 }}>
 
               {/* TikTok */}
               <a href="https://www.tiktok.com/@lospotrillosrestaurant" target="_blank" rel="noopener noreferrer"
@@ -203,37 +234,6 @@ function Navbar() {
               </a>
 
             </div>
-
-            {/* Info: phone + hours + address */}
-            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-
-              <a href="tel:+12673232669" className="pnav-util-link">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="#C0392B">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                (267) 323-2669
-              </a>
-
-              <span className="pnav-util-link" style={{ cursor: "default" }}>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="#C0392B">
-                  <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
-                </svg>
-                Mon – Sat &nbsp; 10am – 9pm
-              </span>
-
-              <a
-                href="https://maps.google.com/?q=2617+E+Venango+St+Philadelphia+PA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pnav-util-link pnav-util-address"
-              >
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="#C0392B">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                2617 E Venango St, Philadelphia, PA
-              </a>
-
-            </div>
           </div>
         </div>
 
@@ -245,22 +245,32 @@ function Navbar() {
           transition:   "padding 0.35s ease",
         }}>
           <div style={{
-            maxWidth:       "1180px",
+            maxWidth:       "1440px",
             margin:         "0 auto",
-            padding:        "0 24px",
+            padding:        "0 32px",
             display:        "flex",
             alignItems:     "center",
             justifyContent: "space-between",
             gap:            "16px",
           }}>
 
-            {/* LOGO principal */}
-            <a href="/" style={{ flexShrink: 0, lineHeight: 0 }}>
+            {/* LOGO — horses on top, text below, stacked */}
+            <a href="/" style={{ flexShrink: 0, lineHeight: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
+              <img
+                src="/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png"
+                alt="Los Potrillos — horses"
+                style={{
+                  height:     scrolled ? "24px" : "32px",
+                  width:      "auto",
+                  transition: "height 0.35s ease",
+                  display:    "block",
+                }}
+              />
               <img
                 src="/wp-content/uploads/2026/05/Los-Potrillos-_WB-scaled.png"
                 alt="Los Potrillos"
                 style={{
-                  height:     scrolled ? "42px" : "54px",
+                  height:     scrolled ? "28px" : "36px",
                   width:      "auto",
                   transition: "height 0.35s ease",
                   display:    "block",
@@ -287,7 +297,7 @@ function Navbar() {
 
             {/* RIGHT: CTAs + Hamburger */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
-              <a href="https://los-potrillos-restaurant.cloveronline.com/menu/all" className="pnav-cta-primary">Order Pickup</a>
+              <a href="https://los-potrillos-restaurant.cloveronline.com/menu/all"  target="_blank" rel="noopener noreferrer"className="pnav-cta-primary">Order Pickup</a>
               <a href="/contact" className="pnav-cta-secondary">Catering Quote</a>
 
               <button
@@ -367,7 +377,7 @@ function Navbar() {
 
       {/* ── SPACER ───────────────────────────────────────────────────────── */}
       <div style={{
-        height:     scrolled ? "64px" : "112px",
+        height:     scrolled ? "64px" : "120px",
         transition: "height 0.35s ease",
       }} />
     </>

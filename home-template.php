@@ -50,16 +50,124 @@ get_header(); ?>
 }
 
 /* ── 4.2 HERO ──────────────────────────────────── */
+.hp-hero-wrap { background: #1a0800; }
 .hp-hero {
   display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 88vh; background: #fff;
+  min-height: 88vh; background: #1a0800; align-items: stretch;
+  max-width: 1600px; margin: 0 auto;
 }
 .hp-hero-left {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 60px 52px 60px 5vw;
+  padding: 60px 52px 60px 5vw; gap: 0;
+  background: #1a0800;
 }
-.hp-hero-right { position: relative; overflow: hidden; }
-.hp-hero-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hp-hero-food-img {
+  width: 100%; border-radius: 6px; overflow: hidden;
+  margin: 24px 0 28px 0;
+  max-height: 220px;
+}
+.hp-hero-food-img img {
+  width: 100%; height: 220px; object-fit: cover; display: block;
+  border-radius: 6px;
+}
+
+/* ── HERO SLIDESHOW (right) ─────────────────────── */
+.hp-hero-right {
+  position: relative; height: 100%; min-height: 88vh;
+  display: flex; align-items: stretch;
+  background: rgb(26, 8, 0);
+  overflow: hidden;
+}
+.hp-island {
+  position: absolute; opacity: 0.65;
+  width: 100%; height: 100%; transform: scale(1);
+  background: rgb(52, 65, 73);
+  filter: url(#octave1) brightness(20) contrast(1);
+  pointer-events: none; z-index: 0;
+}
+.hp-islandt {
+  position: absolute; opacity: 0.5;
+  width: 100%; height: 100%; transform: scale(1);
+  background: rgb(52, 65, 73);
+  filter: url(#octave2) brightness(20) contrast(1);
+  pointer-events: none; z-index: 0;
+}
+.hp-slide-wrap {
+  position: relative; width: 100%; max-width: 400px;
+}
+.hp-slide {
+  display: none;
+  background: #fff;
+  border: 1px solid #ece8e2;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  animation: hpFadeSlide 0.5s ease;
+}
+.hp-slide.active { display: block; }
+@keyframes hpFadeSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hp-slide-img {
+  width: 100%; height: 260px; object-fit: cover; display: block;
+}
+.hp-slide-body { padding: 22px 24px 26px; }
+.hp-slide-cat {
+  font-family: 'Oswald', sans-serif; text-transform: uppercase;
+  letter-spacing: 0.14em; font-size: 0.58rem; font-weight: 600;
+  color: #C0392B; margin: 0 0 6px 0;
+}
+.hp-slide-name {
+  font-family: 'Playfair Display', serif; font-size: 1.3rem;
+  font-weight: 800; color: #1a1a1a; margin: 0 0 8px 0; line-height: 1.2;
+}
+.hp-slide-desc {
+  font-family: 'Lato', sans-serif; font-size: 0.8rem;
+  color: #888; line-height: 1.65; margin: 0 0 18px 0;
+}
+.hp-slide-footer {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 12px;
+}
+.hp-slide-price {
+  font-family: 'Oswald', sans-serif; font-size: 1.15rem;
+  font-weight: 700; color: #1a1a1a;
+}
+.hp-slide-btn {
+  font-family: 'Oswald', sans-serif; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  font-size: 0.68rem; padding: 9px 18px; border-radius: 3px;
+  text-decoration: none; border: 2px solid #C0392B;
+  background: #C0392B; color: #fff;
+  transition: background 0.2s; white-space: nowrap;
+}
+.hp-slide-btn:hover { background: #a93226; border-color: #a93226; }
+
+/* Dots */
+.hp-slide-dots {
+  display: flex; justify-content: center; gap: 8px; margin-top: 20px;
+}
+.hp-slide-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ddd; border: none; cursor: pointer;
+  padding: 0; transition: background 0.2s, transform 0.2s;
+}
+.hp-slide-dot.active { background: #C0392B; transform: scale(1.3); }
+
+/* Prev / Next arrows */
+.hp-slide-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #fff; border: 1px solid #e0dbd4;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  color: #1a1a1a; transition: background 0.2s, color 0.2s;
+  z-index: 2;
+}
+.hp-slide-arrow:hover { background: #C0392B; color: #fff; border-color: #C0392B; }
+.hp-slide-arrow-prev { left: -18px; }
+.hp-slide-arrow-next { right: -18px; }
 
 /* ── 4.3 TWO PILLARS ───────────────────────────── */
 .hp-pillars { display: grid; grid-template-columns: 1fr 1fr; }
@@ -132,8 +240,11 @@ get_header(); ?>
 /* ── RESPONSIVE ────────────────────────────────── */
 @media (max-width: 960px) {
   .hp-hero { grid-template-columns: 1fr; min-height: auto; }
-  .hp-hero-right { height: 320px; order: -1; }
+  .hp-hero-right { height: auto; order: -1; padding: 32px 24px; }
   .hp-hero-left { padding: 36px 24px 44px; }
+  .hp-hero-food-img { display: none; }
+  .hp-slide-arrow-prev { left: -12px; }
+  .hp-slide-arrow-next { right: -12px; }
   .hp-pillars { grid-template-columns: 1fr; }
   .hp-pillar-card { height: 400px; }
   .hp-birria { grid-template-columns: 1fr; min-height: auto; }
@@ -158,42 +269,121 @@ get_header(); ?>
 <!-- ═══════════════════════════════════════════════
   4.2 — HERO
 ═══════════════════════════════════════════════ -->
+<div class="hp-hero-wrap">
 <section class="hp-hero">
 
+  <!-- LEFT: Headline + food image + CTAs -->
   <div class="hp-hero-left">
-    <p class="hp-eyebrow">Authentic Puebla-Style Mexican · Port Richmond, Philadelphia</p>
+    <p class="hp-eyebrow" style="color:rgba(212,160,23,0.85);">Authentic Puebla-Style Mexican · Port Richmond, Philadelphia</p>
 
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.8vw,3.8rem);font-weight:800;line-height:1.15;color:#1a1a1a;margin:0 0 20px 0;letter-spacing:-0.01em;">
-      Real Birria Tacos.<br>
-      Real Puebla Recipe.<br>
-      <em style="color:#C0392B;font-style:italic;">Made Fresh in Philadelphia.</em>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.8vw,3.8rem);font-weight:800;line-height:1.15;color:#fff;margin:0;letter-spacing:-0.01em;">
+      Welcome to<br>
+      Restaurant Los Potrillos,<br>
+      <em style="color:#e8c07a;font-style:italic;">Made Fresh in Philadelphia.</em>
     </h1>
 
-    <p style="font-family:'Lato',sans-serif;font-size:0.95rem;color:#555;line-height:1.85;margin:0 0 24px 0;max-width:420px;">
+    <!-- Food image below headline -->
+    <!-- <div class="hp-hero-food-img">
+      <img src="/wp-content/uploads/2026/05/TacosBirreaHero-scaled.png" alt="Birria Tacos with consomé — Los Potrillos, Philadelphia">
+    </div> -->
+
+    <p style="font-family:'Lato',sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.85;margin:0 0 24px 0;max-width:420px;">
       Slow-cooked for 12 hours using a family recipe passed down through generations. Order pickup in minutes — or let us cater your next family event.
     </p>
 
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:28px;">
       <span style="color:#e6a817;font-size:0.9rem;">★★★★★</span>
-      <span style="font-family:'Lato',sans-serif;font-size:0.77rem;color:#555;font-weight:700;">Rated Excellent — 291+ Google Reviews</span>
+      <span style="font-family:'Lato',sans-serif;font-size:0.77rem;color:rgba(255,255,255,0.55);font-weight:700;">Rated Excellent — 291+ Google Reviews</span>
     </div>
 
     <div class="hp-hero-ctas" style="display:flex;flex-wrap:wrap;gap:12px;">
       <a href="https://los-potrillos-restaurant.cloveronline.com/" target="_blank" rel="noopener" class="hp-btn-primary">
         Order Pickup Now →
       </a>
-      <a href="#catering" class="hp-btn-secondary">
+      <a href="#catering" class="hp-btn-secondary" style="border-color:rgba(255,255,255,0.5);color:#fff;">
         Get a Catering Quote
       </a>
     </div>
   </div>
 
-  <div class="hp-hero-right">
-    <img src="/wp-content/uploads/2026/05/TacosBirreaHero-scaled.png" alt="Birria Tacos with consomé — Los Potrillos, Philadelphia">
+  <!-- RIGHT: Hero photo with animated background -->
+  <div class="hp-hero-right" style="padding:0;">
+
+    <!-- SVG filters for animated background -->
+    <svg style="position:absolute;width:0;height:0;">
+      <defs>
+        <filter id="octave1" x="0%" y="0%" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2">
+            <animate attributeName="baseFrequency" dur="30s"
+              values="0.9;0.7;0.5;0.7;0.9" repeatCount="indefinite"/>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" scale="60"/>
+        </filter>
+        <filter id="octave2" x="0%" y="0%" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" seed="8">
+            <animate attributeName="baseFrequency" dur="20s"
+              values="0.7;0.5;0.9;0.5;0.7" repeatCount="indefinite"/>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" scale="80"/>
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Animated layers -->
+    <div class="hp-island"></div>
+    <div class="hp-islandt"></div>
+
+    <!-- Hero photo — full bleed -->
+    <img
+      src="/wp-content/uploads/2026/05/TacosBirreaHero-scaled.png"
+      alt="Los Potrillos Restaurant — Philadelphia"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1;">
+
   </div>
 
 </section>
+</div>
 
+<!-- ═══════════════════════════════════════════════
+  4.3 — THE TWO PILLARS
+═══════════════════════════════════════════════ -->
+<section class="hp-pillars">
+
+  <div class="hp-pillar-card">
+    <img src="/wp-content/uploads/2026/05/OrderPickupHero-scaled.jpg" alt="Los Potrillos — Order Pickup Birria Tacos">
+    <div class="hp-pillar-overlay"></div>
+    <div class="hp-pillar-content">
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:800;color:#fff;margin:0 0 10px 0;line-height:1.1;letter-spacing:-0.01em;">
+        Order Pickup
+      </h2>
+      <p style="font-family:'Lato',sans-serif;color:rgba(255,255,255,0.82);font-size:0.85rem;line-height:1.7;margin:0 0 20px 0;">
+        Real birria tacos, fresh from our kitchen.<br>
+        Order online — pick up in 15 minutes.
+      </p>
+      <a href="https://los-potrillos-restaurant.cloveronline.com/" target="_blank" rel="noopener" class="hp-btn-primary">
+        Order Now
+      </a>
+    </div>
+  </div>
+
+  <div class="hp-pillar-card">
+    <img src="/wp-content/uploads/2026/05/CateringService-scaled.jpg" alt="Los Potrillos — Catering for Events and Celebrations">
+    <div class="hp-pillar-overlay"></div>
+    <div class="hp-pillar-content">
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:800;color:#fff;margin:0 0 10px 0;line-height:1.1;letter-spacing:-0.01em;">
+        Order Catering
+      </h2>
+      <p style="font-family:'Lato',sans-serif;color:rgba(255,255,255,0.82);font-size:0.85rem;line-height:1.7;margin:0 0 20px 0;">
+        From quinceañeras to corporate events,<br>
+        we bring real Puebla flavor to your table.
+      </p>
+      <a href="#catering" class="hp-btn-primary">
+        Request a Quote
+      </a>
+    </div>
+  </div>
+
+</section>
 
 <!-- ═══════════════════════════════════════════════
   FEATURED DISHES
@@ -208,7 +398,7 @@ get_header(); ?>
       </h2>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+    <div class="hp-featured-grid">
 
       <!-- CARD 1 — Birria Tacos -->
       <div style="background:#fff;border:1px solid #ece8e2;border-radius:4px;overflow:hidden;transition:transform 0.28s ease,box-shadow 0.28s ease;"
@@ -282,11 +472,94 @@ get_header(); ?>
         </div>
       </div>
 
+      <!-- CARD 4 — Large Nachos -->
+      <div style="background:#fff;border:1px solid #ece8e2;border-radius:4px;overflow:hidden;transition:transform 0.28s ease,box-shadow 0.28s ease;"
+        onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="height:220px;overflow:hidden;">
+          <img src="/wp-content/uploads/2026/05/LargeNachosPotrilloStyle-scaled.png" alt="Large Nachos Potrillo Style — Los Potrillos"
+            style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="padding:22px 24px 26px;">
+          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;font-weight:600;color:#C0392B;margin:0 0 6px 0;">Appetizers</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Large Nachos Potrillo Style</h3>
+          <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Tortilla chips loaded with our signature toppings, fresh jalapeños, and house-made salsas.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$17.00</span>
+            <a href="https://los-potrillos-restaurant.cloveronline.com/menu/steak-shrimp-fajitas-EP12PRVRMFTZ0"
+              target="_blank" rel="noopener"
+              style="font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;padding:9px 18px;border-radius:3px;text-decoration:none;border:2px solid #C0392B;background:#C0392B;color:#fff;transition:background 0.2s;white-space:nowrap;"
+              onmouseover="this.style.background='#a93226';this.style.borderColor='#a93226'"
+              onmouseout="this.style.background='#C0392B';this.style.borderColor='#C0392B'">
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 — Steak and Shrimp Fajitas -->
+      <div style="background:#fff;border:1px solid #ece8e2;border-radius:4px;overflow:hidden;transition:transform 0.28s ease,box-shadow 0.28s ease;"
+        onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="height:220px;overflow:hidden;">
+          <img src="/wp-content/uploads/2026/05/SteakShrimpFajitas-scaled.png" alt="Steak and Shrimp Fajitas — Los Potrillos"
+            style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="padding:22px 24px 26px;">
+          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;font-weight:600;color:#C0392B;margin:0 0 6px 0;">Fajitas</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Steak and Shrimp Fajitas</h3>
+          <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Sizzling steak and shrimp with roasted peppers, onions, and warm flour tortillas.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$18.00</span>
+            <a href="https://los-potrillos-restaurant.cloveronline.com/menu/steak-shrimp-fajitas-EP12PRVRMFTZ0"
+              target="_blank" rel="noopener"
+              style="font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;padding:9px 18px;border-radius:3px;text-decoration:none;border:2px solid #C0392B;background:#C0392B;color:#fff;transition:background 0.2s;white-space:nowrap;"
+              onmouseover="this.style.background='#a93226';this.style.borderColor='#a93226'"
+              onmouseout="this.style.background='#C0392B';this.style.borderColor='#C0392B'">
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 — Chicken Birria Tacos -->
+      <div style="background:#fff;border:1px solid #ece8e2;border-radius:4px;overflow:hidden;transition:transform 0.28s ease,box-shadow 0.28s ease;"
+        onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="height:220px;overflow:hidden;">
+          <img src="/wp-content/uploads/2026/05/ChickenBirriaTacos-scaled.png" alt="Chicken Birria Tacos — Los Potrillos"
+            style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="padding:22px 24px 26px;">
+          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;font-weight:600;color:#C0392B;margin:0 0 6px 0;">Birria</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Chicken Birria Tacos</h3>
+          <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Slow-cooked chicken birria, Oaxacan cheese, consomé for dipping. A lighter take on our signature.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$15.00</span>
+            <a href="https://los-potrillos-restaurant.cloveronline.com/menu/chicken-birria-tacos-3-CESTXNRFQY56J"
+              target="_blank" rel="noopener"
+              style="font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;padding:9px 18px;border-radius:3px;text-decoration:none;border:2px solid #C0392B;background:#C0392B;color:#fff;transition:background 0.2s;white-space:nowrap;"
+              onmouseover="this.style.background='#a93226';this.style.borderColor='#a93226'"
+              onmouseout="this.style.background='#C0392B';this.style.borderColor='#C0392B'">
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <style>
+      .hp-featured-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
       @media (max-width: 768px) {
-        .hp-featured-grid { grid-template-columns: 1fr !important; }
+        .hp-featured-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
       }
     </style>
 
@@ -294,46 +567,6 @@ get_header(); ?>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════
-  4.3 — THE TWO PILLARS
-═══════════════════════════════════════════════ -->
-<section class="hp-pillars">
-
-  <div class="hp-pillar-card">
-    <img src="/wp-content/uploads/2026/05/OrderPickupHero-scaled.jpg" alt="Los Potrillos — Order Pickup Birria Tacos">
-    <div class="hp-pillar-overlay"></div>
-    <div class="hp-pillar-content">
-      <h2 style="font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:800;color:#fff;margin:0 0 10px 0;line-height:1.1;letter-spacing:-0.01em;">
-        Order Pickup
-      </h2>
-      <p style="font-family:'Lato',sans-serif;color:rgba(255,255,255,0.82);font-size:0.85rem;line-height:1.7;margin:0 0 20px 0;">
-        Real birria tacos, fresh from our kitchen.<br>
-        Order online — pick up in 15 minutes.
-      </p>
-      <a href="https://los-potrillos-restaurant.cloveronline.com/" target="_blank" rel="noopener" class="hp-btn-primary">
-        Order Now
-      </a>
-    </div>
-  </div>
-
-  <div class="hp-pillar-card">
-    <img src="/wp-content/uploads/2026/05/CateringService-scaled.jpg" alt="Los Potrillos — Catering for Events and Celebrations">
-    <div class="hp-pillar-overlay"></div>
-    <div class="hp-pillar-content">
-      <h2 style="font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:800;color:#fff;margin:0 0 10px 0;line-height:1.1;letter-spacing:-0.01em;">
-        Order Catering
-      </h2>
-      <p style="font-family:'Lato',sans-serif;color:rgba(255,255,255,0.82);font-size:0.85rem;line-height:1.7;margin:0 0 20px 0;">
-        From quinceañeras to corporate events,<br>
-        we bring real Puebla flavor to your table.
-      </p>
-      <a href="#catering" class="hp-btn-primary">
-        Request a Quote
-      </a>
-    </div>
-  </div>
-
-</section>
 
 
 <!-- ═══════════════════════════════════════════════
@@ -473,6 +706,12 @@ get_header(); ?>
 
 </section> -->
 
+<!-- ═══════════════════════════════════════════════
+  4.8 — REVIEWS
+═══════════════════════════════════════════════ -->
+<section class="st-reviews" style="--st-review-pattern:url('<?php echo esc_url($img['pattern_reviews']); ?>'); --st-review-stamp:url('<?php echo esc_url($img['stamp_round']); ?>')">
+  <?php echo do_shortcode('[trustindex no-registration=google]'); ?>
+</section>
 
 <!-- ═══════════════════════════════════════════════
   4.7 — CATERING SECTION
@@ -514,70 +753,6 @@ get_header(); ?>
     </div>
   </div>
 </section>
-
-
-<!-- ═══════════════════════════════════════════════
-  4.8 — REVIEWS
-═══════════════════════════════════════════════ -->
-<section style="background:#fff;padding:80px 24px;">
-  <div style="max-width:1180px;margin:0 auto;">
-
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;color:#1a1a1a;text-align:center;margin:0 0 20px 0;letter-spacing:-0.01em;">
-      Loved by Families Across Philadelphia
-    </h2>
-
-    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 24px;margin-bottom:44px;">
-      <span style="color:#e6a817;font-size:1rem;font-weight:700;">★ 4.7 / 5</span>
-      <span style="font-family:'Lato',sans-serif;color:#666;font-size:0.78rem;">Google Rating</span>
-      <span style="color:#ddd;">|</span>
-      <span style="font-family:'Lato',sans-serif;color:#666;font-size:0.78rem;">291+ Verified Reviews</span>
-      <span style="color:#ddd;">|</span>
-      <span style="font-family:'Lato',sans-serif;color:#666;font-size:0.78rem;">Family-Owned</span>
-    </div>
-
-    <div class="hp-reviews-scroll">
-      <?php
-      $reviews = [
-        ['name' => 'Maria G.',    'text' => 'The birria tacos are absolutely incredible. I\'ve tried birria in so many places across Philly and nothing comes close. The consomé is rich and the meat just falls apart. This is the real deal.'],
-        ['name' => 'Carlos R.',   'text' => 'We had Los Potrillos cater our daughter\'s quinceañera and it was a huge hit. The food arrived on time, portions were incredibly generous, and everyone kept asking who the caterer was.'],
-        ['name' => 'Jennifer T.', 'text' => 'Best Mexican food in Port Richmond, hands down. The family behind this place truly puts love into every dish. The tortillas taste homemade and the salsa is fire.'],
-        ['name' => 'David M.',    'text' => 'Ordered pickup for the first time — the app was easy, food was ready in 15 minutes, and still hot and fresh. Will definitely be back. The quesabirria is a must.'],
-        ['name' => 'Sofia L.',    'text' => 'I grew up eating my grandmother\'s cooking in Mexico and this is the closest thing I\'ve found in Philadelphia. You can taste the care that goes into every plate.'],
-        ['name' => 'Marcus W.',   'text' => 'Stumbled upon this place on a Saturday and it changed my lunch game forever. The portions are huge, the price is fair, and the flavor is unreal. Going back this weekend.'],
-      ];
-      foreach ($reviews as $r) : ?>
-        <div class="hp-review-card" style="background:#f9f9f9;border:1px solid #ebebeb;padding:24px;">
-          <div style="color:#e6a817;font-size:0.82rem;letter-spacing:0.05em;margin-bottom:14px;">★★★★★</div>
-          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.88rem;color:#333;line-height:1.75;margin:0 0 18px 0;
-            display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;">
-            "<?php echo esc_html($r['text']); ?>"
-          </p>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
-            <span style="font-family:'Lato',sans-serif;font-weight:700;font-size:0.77rem;color:#1a1a1a;"><?php echo esc_html($r['name']); ?></span>
-            <div style="display:flex;align-items:center;gap:4px;">
-              <svg width="11" height="11" viewBox="0 0 24 24">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-              <span style="font-family:'Lato',sans-serif;font-size:0.63rem;color:#999;">Posted on Google</span>
-            </div>
-          </div>
-        </div>
-      <?php endforeach; ?>
-    </div>
-
-    <div style="text-align:center;margin-top:32px;">
-      <a href="https://g.page/r/los-potrillos-reviews" target="_blank" rel="noopener"
-        style="font-family:'Lato',sans-serif;font-size:0.82rem;color:#C0392B;text-decoration:none;font-weight:700;border-bottom:2px solid #C0392B;padding-bottom:2px;">
-        Read all 291+ reviews on Google →
-      </a>
-    </div>
-
-  </div>
-</section>
-
 
 <!-- ═══════════════════════════════════════════════
   4.9 — VISIT US

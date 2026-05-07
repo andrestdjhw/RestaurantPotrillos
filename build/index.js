@@ -1128,6 +1128,7 @@ function Navbar() {
           align-items: center;
           gap: 5px;
           transition: color 0.2s;
+          white-space: nowrap;
         }
         .pnav-util-link:hover { color: #C0392B; }
 
@@ -1227,26 +1228,78 @@ function Navbar() {
         style: {
           background: "#f5f5f5",
           borderBottom: "1px solid #e0e0e0",
-          padding: "6px 0",
-          maxHeight: scrolled ? "0" : "44px",
-          overflow: "hidden",
-          transition: "max-height 0.35s ease"
+          padding: "10px 0"
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           style: {
-            maxWidth: "1180px",
+            maxWidth: "1440px",
             margin: "0 auto",
-            padding: "0 24px",
+            padding: "0 32px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            gap: "8px"
+            gap: "16px"
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             style: {
               display: "flex",
               alignItems: "center",
-              gap: "14px",
+              gap: "20px",
+              flexShrink: 0
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: "tel:+12673232669",
+              className: "pnav-util-link",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                width: "11",
+                height: "11",
+                viewBox: "0 0 24 24",
+                fill: "#C0392B",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                })
+              }), "(267) 323-2669"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              className: "pnav-util-link",
+              style: {
+                cursor: "default"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                width: "11",
+                height: "11",
+                viewBox: "0 0 24 24",
+                fill: "#C0392B",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"
+                })
+              }), "Mon \u2013 Sat \xA0 10am \u2013 9pm"]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            style: {
+              display: "flex",
+              justifyContent: "center",
+              flex: 1
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: "https://maps.google.com/?q=2617+E+Venango+St+Philadelphia+PA",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "pnav-util-link pnav-util-address",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                width: "11",
+                height: "11",
+                viewBox: "0 0 24 24",
+                fill: "#C0392B",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                })
+              }), "2617 E Venango St, Philadelphia, PA"]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
               flexShrink: 0
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
@@ -1295,53 +1348,6 @@ function Navbar() {
                 })
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            style: {
-              display: "flex",
-              alignItems: "center",
-              gap: "20px"
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "tel:+12673232669",
-              className: "pnav-util-link",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                width: "11",
-                height: "11",
-                viewBox: "0 0 24 24",
-                fill: "#C0392B",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                })
-              }), "(267) 323-2669"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-              className: "pnav-util-link",
-              style: {
-                cursor: "default"
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                width: "11",
-                height: "11",
-                viewBox: "0 0 24 24",
-                fill: "#C0392B",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"
-                })
-              }), "Mon \u2013 Sat \xA0 10am \u2013 9pm"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "https://maps.google.com/?q=2617+E+Venango+St+Philadelphia+PA",
-              target: "_blank",
-              rel: "noopener noreferrer",
-              className: "pnav-util-link pnav-util-address",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                width: "11",
-                height: "11",
-                viewBox: "0 0 24 24",
-                fill: "#C0392B",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                })
-              }), "2617 E Venango St, Philadelphia, PA"]
-            })]
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -1353,30 +1359,43 @@ function Navbar() {
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           style: {
-            maxWidth: "1180px",
+            maxWidth: "1440px",
             margin: "0 auto",
-            padding: "0 24px",
+            padding: "0 32px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             gap: "16px"
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
             href: "/",
             style: {
               flexShrink: 0,
-              lineHeight: 0
+              lineHeight: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "2px"
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-              src: "/wp-content/uploads/2026/05/Los-Potrillos-_WB-scaled.png",
-              alt: "Los Potrillos",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: "/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png",
+              alt: "Los Potrillos \u2014 horses",
               style: {
-                height: scrolled ? "42px" : "54px",
+                height: scrolled ? "24px" : "32px",
                 width: "auto",
                 transition: "height 0.35s ease",
                 display: "block"
               }
-            })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: "/wp-content/uploads/2026/05/Los-Potrillos-_WB-scaled.png",
+              alt: "Los Potrillos",
+              style: {
+                height: scrolled ? "28px" : "36px",
+                width: "auto",
+                transition: "height 0.35s ease",
+                display: "block"
+              }
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
             className: "pnav-desktop-links",
             style: {
@@ -1406,6 +1425,8 @@ function Navbar() {
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
               href: "https://los-potrillos-restaurant.cloveronline.com/menu/all",
+              target: "_blank",
+              rel: "noopener noreferrer",
               className: "pnav-cta-primary",
               children: "Order Pickup"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
@@ -1517,7 +1538,7 @@ function Navbar() {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       style: {
-        height: scrolled ? "64px" : "112px",
+        height: scrolled ? "64px" : "120px",
         transition: "height 0.35s ease"
       }
     })]
@@ -1692,6 +1713,10 @@ if (document.querySelector("#render-navbar-here")) {
 if (document.querySelector("#render-footer-here")) {
   const root = react_dom_client__WEBPACK_IMPORTED_MODULE_3___default().createRoot(document.querySelector("#render-footer-here"));
   root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_scripts_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {}));
+}
+if (document.querySelector("#render-catering-form-here")) {
+  const root = react_dom_client__WEBPACK_IMPORTED_MODULE_3___default().createRoot(document.querySelector("#render-catering-form-here"));
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_scripts_CateringForm__WEBPACK_IMPORTED_MODULE_6__["default"], {}));
 }
 })();
 

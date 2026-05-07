@@ -6,8 +6,8 @@ import Navbar from "./scripts/Navbar"
 import Footer from "./scripts/Footer"
 import CateringForm from "./scripts/CateringForm"
 
-
 const person1 = new Person("Brad")
+
 if (document.querySelector("#render-react-example-here")) {
   const root = ReactDOM.createRoot(document.querySelector("#render-react-example-here"))
   root.render(<ExampleReactComponent />)
@@ -23,3 +23,7 @@ if (document.querySelector("#render-footer-here")) {
   root.render(<Footer />)
 }
 
+if (document.querySelector("#render-catering-form-here")) {
+  const root = ReactDOM.createRoot(document.querySelector("#render-catering-form-here"))
+  root.render(<CateringForm />)
+}
