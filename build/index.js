@@ -18,6 +18,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
+// ─── CONFIGURACIÓN — cambia solo estos valores ───────────────────────────────
+
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const RECAPTCHA_SITE_KEY = "YOUR_RECAPTCHA_SITE_KEY";
+// ─────────────────────────────────────────────────────────────────────────────
+
 const INITIAL = {
   fullName: "",
   phone: "",
@@ -26,7 +34,7 @@ const INITIAL = {
   guests: "",
   eventType: "",
   message: "",
-  honeypot: "" // spam trap — never shown to user
+  honeypot: ""
 };
 const EVENT_TYPES = ["Quinceañera", "Wedding", "Birthday", "Corporate", "Community", "Other"];
 function validate(fields) {
@@ -45,8 +53,46 @@ function CateringForm() {
   const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [success, setSuccess] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [apiError, setApiError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
-  const ajaxUrl = window.themeData?.ajaxUrl || "/wp-admin/admin-ajax.php";
-  const nonce = window.themeData?.nonce || "";
+  const [captchaReady, setCaptchaReady] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [captchaError, setCaptchaError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const recaptchaRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const widgetIdRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // ── Cargar EmailJS y reCAPTCHA via CDN ──────────────────────────────────
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    // EmailJS
+    if (!window.emailjs) {
+      const ejsScript = document.createElement("script");
+      ejsScript.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+      ejsScript.onload = () => window.emailjs.init(EMAILJS_PUBLIC_KEY);
+      document.head.appendChild(ejsScript);
+    } else {
+      window.emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
+    // reCAPTCHA v2
+    if (!window.grecaptcha) {
+      const rcScript = document.createElement("script");
+      rcScript.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+      rcScript.async = true;
+      rcScript.defer = true;
+      rcScript.onload = () => setCaptchaReady(true);
+      document.head.appendChild(rcScript);
+    } else {
+      setCaptchaReady(true);
+    }
+  }, []);
+
+  // ── Renderizar widget reCAPTCHA cuando esté listo ────────────────────────
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (captchaReady && recaptchaRef.current && widgetIdRef.current === null) {
+      widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
+        sitekey: RECAPTCHA_SITE_KEY,
+        theme: "light",
+        callback: () => setCaptchaError(false)
+      });
+    }
+  }, [captchaReady]);
   function handleChange(e) {
     const {
       name,
@@ -64,45 +110,47 @@ function CateringForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     setApiError("");
+    setCaptchaError(false);
 
-    // Honeypot check
+    // Honeypot
     if (fields.honeypot) return;
+
+    // Validación de campos
     const errs = validate(fields);
     if (Object.keys(errs).length) {
       setErrors(errs);
       return;
     }
+
+    // Validación reCAPTCHA
+    const captchaToken = window.grecaptcha?.getResponse(widgetIdRef.current);
+    if (!captchaToken) {
+      setCaptchaError(true);
+      return;
+    }
     setLoading(true);
     try {
-      const body = new FormData();
-      body.append("action", "submit_catering_form");
-      body.append("nonce", nonce);
-      body.append("full_name", fields.fullName);
-      body.append("phone", fields.phone);
-      body.append("email", fields.email);
-      body.append("event_date", fields.eventDate);
-      body.append("guests", fields.guests);
-      body.append("event_type", fields.eventType);
-      body.append("message", fields.message);
-      const res = await fetch(ajaxUrl, {
-        method: "POST",
-        body
+      await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name: fields.fullName,
+        phone: fields.phone,
+        email: fields.email,
+        event_date: fields.eventDate,
+        guests: fields.guests,
+        event_type: fields.eventType,
+        message: fields.message || "No additional message."
       });
-      const data = await res.json();
-      if (data.success) {
-        setSuccess(true);
-        setFields(INITIAL);
-      } else {
-        setApiError(data.data?.message || "Something went wrong. Please try again.");
-      }
-    } catch {
-      setApiError("Network error. Please check your connection and try again.");
+      setSuccess(true);
+      setFields(INITIAL);
+      window.grecaptcha?.reset(widgetIdRef.current);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setApiError("Something went wrong. Please try again or call us directly.");
     } finally {
       setLoading(false);
     }
   }
 
-  // ── STYLES ──────────────────────────────────────────────────────────────
+  // ── ESTILOS ──────────────────────────────────────────────────────────────
   const card = {
     background: "#fff",
     border: "1px solid #e8e2d8",
@@ -120,7 +168,7 @@ function CateringForm() {
     color: "#444",
     marginBottom: "6px"
   };
-  const input = hasError => ({
+  const inputStyle = hasError => ({
     width: "100%",
     padding: "10px 13px",
     fontSize: "0.85rem",
@@ -143,7 +191,7 @@ function CateringForm() {
     marginBottom: "16px"
   };
 
-  // ── SUCCESS STATE ──────────────────────────────────────────────────────
+  // ── SUCCESS ──────────────────────────────────────────────────────────────
   if (success) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       style: {
@@ -212,7 +260,7 @@ function CateringForm() {
     });
   }
 
-  // ── FORM ──────────────────────────────────────────────────────────────
+  // ── FORM ─────────────────────────────────────────────────────────────────
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     style: card,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
@@ -259,7 +307,7 @@ function CateringForm() {
           value: fields.fullName,
           onChange: handleChange,
           placeholder: "Maria Gonz\xE1lez",
-          style: input(!!errors.fullName)
+          style: inputStyle(!!errors.fullName)
         }), errors.fullName && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
           style: errMsg,
           children: errors.fullName
@@ -281,7 +329,7 @@ function CateringForm() {
             value: fields.phone,
             onChange: handleChange,
             placeholder: "(267) 000-0000",
-            style: input(!!errors.phone)
+            style: inputStyle(!!errors.phone)
           }), errors.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
             style: errMsg,
             children: errors.phone
@@ -297,7 +345,7 @@ function CateringForm() {
             value: fields.email,
             onChange: handleChange,
             placeholder: "you@email.com",
-            style: input(!!errors.email)
+            style: inputStyle(!!errors.email)
           }), errors.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
             style: errMsg,
             children: errors.email
@@ -319,7 +367,7 @@ function CateringForm() {
             name: "eventDate",
             value: fields.eventDate,
             onChange: handleChange,
-            style: input(!!errors.eventDate)
+            style: inputStyle(!!errors.eventDate)
           }), errors.eventDate && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
             style: errMsg,
             children: errors.eventDate
@@ -336,7 +384,7 @@ function CateringForm() {
             onChange: handleChange,
             placeholder: "50",
             min: "1",
-            style: input(!!errors.guests)
+            style: inputStyle(!!errors.guests)
           }), errors.guests && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
             style: errMsg,
             children: errors.guests
@@ -352,7 +400,7 @@ function CateringForm() {
           value: fields.eventType,
           onChange: handleChange,
           style: {
-            ...input(!!errors.eventType),
+            ...inputStyle(!!errors.eventType),
             cursor: "pointer"
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
@@ -370,7 +418,7 @@ function CateringForm() {
         style: fieldWrap,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
           style: label,
-          children: ["Tell Us About Your Event ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          children: ["Tell Us About Your Event", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
             style: {
               fontWeight: 400,
               textTransform: "none",
@@ -385,10 +433,20 @@ function CateringForm() {
           rows: 3,
           placeholder: "Date, location, specific menu requests\u2026",
           style: {
-            ...input(false),
+            ...inputStyle(false),
             resize: "vertical",
             lineHeight: 1.6
           }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          marginBottom: "16px"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          ref: recaptchaRef
+        }), captchaError && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          style: errMsg,
+          children: "Please complete the CAPTCHA before submitting."
         })]
       }), apiError && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
         style: {
