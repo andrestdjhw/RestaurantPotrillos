@@ -333,11 +333,12 @@ get_header(); ?>
     <div class="hp-island"></div>
     <div class="hp-islandt"></div>
 
-    <!-- Hero photo — full bleed -->
-    <img
-      src="/wp-content/uploads/2026/05/TacosBirreaHero-scaled.png"
-      alt="Los Potrillos Restaurant — Philadelphia"
+    <!-- Hero video — full bleed -->
+    <video
+      autoplay muted loop playsinline
       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1;">
+      <source src="/wp-content/uploads/2026/05/RestaurantHero.mp4" type="video/mp4">
+    </video>
 
   </div>
 

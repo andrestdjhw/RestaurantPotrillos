@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client"
 import Navbar from "./scripts/Navbar"
 import Footer from "./scripts/Footer"
 import CateringForm from "./scripts/CateringForm"
+import FloatingOrderBar from "./scripts/FloatingOrderBar"
 
 const person1 = new Person("Brad")
 
@@ -26,4 +27,9 @@ if (document.querySelector("#render-footer-here")) {
 if (document.querySelector("#render-catering-form-here")) {
   const root = ReactDOM.createRoot(document.querySelector("#render-catering-form-here"))
   root.render(<CateringForm />)
+}
+
+if (document.querySelector("#render-floating-bar-here")) {
+  const root = ReactDOM.createRoot(document.querySelector("#render-floating-bar-here"))
+  root.render(<FloatingOrderBar />)
 }

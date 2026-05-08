@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
 
 // ─── CONFIGURACIÓN — cambia solo estos valores ───────────────────────────────
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY"
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID"
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"
-const RECAPTCHA_SITE_KEY  = "YOUR_RECAPTCHA_SITE_KEY"
+const EMAILJS_PUBLIC_KEY  = "Et9iu2dz4an-CfbAk"
+const EMAILJS_SERVICE_ID  = "service_xq04hfa"
+const EMAILJS_TEMPLATE_ID = "template_bdkb5dz"
+const RECAPTCHA_SITE_KEY  = "6LdxW-AsAAAAAIFAlAgMTkGn8pK8OLrbZ-sf7p_k"
 // ─────────────────────────────────────────────────────────────────────────────
 
 const INITIAL = {
@@ -79,10 +79,14 @@ function CateringForm() {
   // ── Renderizar widget reCAPTCHA cuando esté listo ────────────────────────
   useEffect(() => {
     if (captchaReady && recaptchaRef.current && widgetIdRef.current === null) {
-      widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
-        sitekey:  RECAPTCHA_SITE_KEY,
-        theme:    "light",
-        callback: () => setCaptchaError(false),
+      window.grecaptcha.ready(() => {
+        if (recaptchaRef.current && widgetIdRef.current === null) {
+          widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
+            sitekey:  RECAPTCHA_SITE_KEY,
+            theme:    "light",
+            callback: () => setCaptchaError(false),
+          })
+        }
       })
     }
   }, [captchaReady])

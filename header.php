@@ -7,3 +7,4 @@
   </head>
   <body <?php body_class(); ?>>
     <div id="render-navbar-here"></div>
+    <div id="render-floating-bar-here"></div>
