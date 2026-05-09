@@ -54,12 +54,11 @@ get_header(); ?>
 .hp-hero {
   display: grid; grid-template-columns: 1fr 1fr;
   min-height: 88vh; background: #1a0800; align-items: stretch;
-  max-width: 1600px; margin: 0 auto;
 }
 .hp-hero-left {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 60px 52px 60px 5vw; gap: 0;
-  background: #1a0800;
+  padding: 60px 52px 60px max(5vw, calc(50vw - 800px));
+  gap: 0; background: #1a0800;
 }
 .hp-hero-food-img {
   width: 100%; border-radius: 6px; overflow: hidden;
