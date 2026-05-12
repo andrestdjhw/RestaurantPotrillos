@@ -1012,10 +1012,6 @@ function Footer() {
                   lineHeight: 1.6
                 },
                 children: "We bring the Puebla flavor to events, festivals, and locations across the city."
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "/food-truck",
-                className: "pfooter-truck-link",
-                children: "See where the truck is today \u2192"
               })]
             })]
           })
@@ -1297,7 +1293,7 @@ function Footer() {
                 className: "pfooter-bottom-link",
                 children: "Terms & Conditions"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "/sitemap",
+                href: "#",
                 className: "pfooter-bottom-link",
                 children: "Site Map"
               })]

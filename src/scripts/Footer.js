@@ -240,9 +240,9 @@ function Footer() {
                 }}>
                   We bring the Puebla flavor to events, festivals, and locations across the city.
                 </p>
-                <a href="/food-truck" className="pfooter-truck-link">
+                {/* <a href="/food-truck" className="pfooter-truck-link">
                   See where the truck is today →
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -428,7 +428,7 @@ function Footer() {
               >
                 <a href="/privacy-policy"    className="pfooter-bottom-link">Privacy Policy</a>
                 <a href="/terms-conditions"  className="pfooter-bottom-link">Terms &amp; Conditions</a>
-                <a href="/sitemap"           className="pfooter-bottom-link">Site Map</a>
+                <a href="#"           className="pfooter-bottom-link">Site Map</a>
               </div>
             </div>
           </div>

@@ -108,7 +108,7 @@ get_header(); ?>
   </div>
 
   <div class="os-hero-img">
-    <img src="/wp-content/uploads/2026/05/Los-Potrillos-_Logos_page-0001-scaled-e1777837318744.jpg" alt="Los Potrillos — the brothers at the restaurant storefront in Port Richmond, Philadelphia">
+    <img src="/wp-content/uploads/2026/05/PotrillosFamilyAtRestaurant.jpg">
   </div>
 
 </section>

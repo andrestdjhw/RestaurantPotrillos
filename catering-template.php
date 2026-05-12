@@ -207,7 +207,7 @@ get_header(); ?>
     <div class="ct-events-grid">
 
       <div class="ct-event-card">
-        <img src="" alt="Family celebrations catering — quinceañeras, weddings, birthdays">
+        <img src="/wp-content/uploads/2026/05/FamilyCelebrationsResPotrillos-scaled.jpg" alt="Family celebrations catering — quinceañeras, weddings, birthdays">
         <div class="ct-event-overlay"></div>
         <div class="ct-event-content">
           <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.62rem;font-weight:600;color:rgba(232,192,122,0.9);margin:0 0 6px 0;">Family</p>
@@ -221,7 +221,7 @@ get_header(); ?>
       </div>
 
       <div class="ct-event-card">
-        <img src="" alt="Corporate catering — office lunches, team gatherings, holiday parties">
+        <img src="/wp-content/uploads/2026/05/CorporateEventsResPotrillos-scaled.jpg" alt="Corporate catering — office lunches, team gatherings, holiday parties">
         <div class="ct-event-overlay"></div>
         <div class="ct-event-content">
           <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.62rem;font-weight:600;color:rgba(232,192,122,0.9);margin:0 0 6px 0;">Corporate</p>
@@ -235,7 +235,7 @@ get_header(); ?>
       </div>
 
       <div class="ct-event-card">
-        <img src="" alt="Community events catering — church gatherings, school functions, block parties">
+        <img src="/wp-content/uploads/2026/05/ComunityEventsResPotrillos-scaled.jpg" alt="Community events catering — church gatherings, school functions, block parties">
         <div class="ct-event-overlay"></div>
         <div class="ct-event-content">
           <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.62rem;font-weight:600;color:rgba(232,192,122,0.9);margin:0 0 6px 0;">Community</p>
@@ -363,7 +363,7 @@ get_header(); ?>
 <!-- ═══════════════════════════════════════════════
   PHOTO GALLERY
 ═══════════════════════════════════════════════ -->
-<section style="background:#f7f4f0;padding:80px 24px;">
+<!-- <section style="background:#f7f4f0;padding:80px 24px;">
   <div style="max-width:1180px;margin:0 auto;">
 
     <div style="text-align:center;margin-bottom:40px;">
@@ -382,7 +382,7 @@ get_header(); ?>
     </div>
 
   </div>
-</section>
+</section> -->
 
 
 <!-- ═══════════════════════════════════════════════
