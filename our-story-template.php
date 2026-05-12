@@ -273,7 +273,7 @@ get_header(); ?>
     </div>
 
     <div style="position:relative;overflow:hidden;border-radius:4px;max-height:560px;">
-      <img src="http://restaurantpotrillos.local/wp-content/uploads/2026/05/CookingStaff-scaled.jpg" alt="Los Potrillos team and family — Port Richmond Philadelphia"
+      <img src="/wp-content/uploads/2026/05/CookingStaff-scaled.jpg" alt="Los Potrillos team and family — Port Richmond Philadelphia"
         style="width:100%;height:100%;object-fit:cover;display:block;">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 50%);"></div>
       <div style="position:absolute;bottom:0;left:0;right:0;padding:36px 40px;">
