@@ -1012,6 +1012,12 @@ function Footer() {
                   lineHeight: 1.6
                 },
                 children: "We bring the Puebla flavor to events, festivals, and locations across the city."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "https://foodtruck.restaurantpotrillos.com/",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "pfooter-truck-link",
+                children: "Visit the Foodtruck \u2192"
               })]
             })]
           })
@@ -1470,6 +1476,7 @@ function Navbar() {
         }
         @media (max-width: 600px) {
           .pnav-util-address { display: none; }
+          .pnav-util-email   { display: none; }
           .pnav-cta-primary, .pnav-cta-secondary {
             font-size: 0.65rem !important;
             padding: 8px 11px !important;
@@ -1525,6 +1532,23 @@ function Navbar() {
                   d: "M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
                 })
               }), "(267) 323-2669"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: "mailto:info@restaurantpotrillos.com",
+              className: "pnav-util-link pnav-util-email",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "11",
+                height: "11",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "#C0392B",
+                strokeWidth: "2",
+                strokeLinecap: "round",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+                  points: "22,6 12,13 2,6"
+                })]
+              }), "info@restaurantpotrillos.com"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
               className: "pnav-util-link",
               style: {
@@ -1569,7 +1593,7 @@ function Navbar() {
               flexShrink: 0
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "https://www.tiktok.com/@lospotrillosrestaurant",
+              href: "https://tiktok.com",
               target: "_blank",
               rel: "noopener noreferrer",
               "aria-label": "TikTok",
@@ -1584,7 +1608,7 @@ function Navbar() {
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "https://www.instagram.com/potrillosrestaurantphilly/",
+              href: "https://instagram.com",
               target: "_blank",
               rel: "noopener noreferrer",
               "aria-label": "Instagram",
@@ -1599,7 +1623,7 @@ function Navbar() {
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "https://www.facebook.com/lospotrillosrestaurantphilly",
+              href: "https://facebook.com",
               target: "_blank",
               rel: "noopener noreferrer",
               "aria-label": "Facebook",
@@ -1690,13 +1714,11 @@ function Navbar() {
               flexShrink: 0
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "https://los-potrillos-restaurant.cloveronline.com/menu/all",
-              target: "_blank",
-              rel: "noopener noreferrer",
+              href: "/order",
               className: "pnav-cta-primary",
               children: "Order Pickup"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "/contact",
+              href: "/catering-quote",
               className: "pnav-cta-secondary",
               children: "Catering Quote"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {

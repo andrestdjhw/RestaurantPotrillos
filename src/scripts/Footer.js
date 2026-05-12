@@ -240,9 +240,9 @@ function Footer() {
                 }}>
                   We bring the Puebla flavor to events, festivals, and locations across the city.
                 </p>
-                {/* <a href="/food-truck" className="pfooter-truck-link">
-                  See where the truck is today →
-                </a> */}
+                <a href="https://foodtruck.restaurantpotrillos.com/" target="_blank" rel="noopener noreferrer" className="pfooter-truck-link">
+                  Visit the Foodtruck →
+                </a>
               </div>
             </div>
           </div>
