@@ -1593,7 +1593,7 @@ function Navbar() {
               flexShrink: 0
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "https://tiktok.com",
+              href: "https://www.tiktok.com/@lospotrillosrestaurant",
               target: "_blank",
               rel: "noopener noreferrer",
               "aria-label": "TikTok",
@@ -1608,7 +1608,7 @@ function Navbar() {
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "https://instagram.com",
+              href: "https://www.instagram.com/potrillosrestaurantphilly/",
               target: "_blank",
               rel: "noopener noreferrer",
               "aria-label": "Instagram",
@@ -1623,7 +1623,7 @@ function Navbar() {
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "https://facebook.com",
+              href: "https://www.facebook.com/lospotrillosrestaurantphilly",
               target: "_blank",
               rel: "noopener noreferrer",
               "aria-label": "Facebook",
@@ -1714,11 +1714,11 @@ function Navbar() {
               flexShrink: 0
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "/order",
+              href: "https://los-potrillos-restaurant.cloveronline.com/menu/all",
               className: "pnav-cta-primary",
               children: "Order Pickup"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "/catering-quote",
+              href: "/contact",
               className: "pnav-cta-secondary",
               children: "Catering Quote"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
