@@ -429,7 +429,7 @@ get_header(); ?>
         onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'"
         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
         <div style="height:220px;overflow:hidden;">
-          <img src="/wp-content/uploads/2026/05/QuesaBirria-scaled.png" alt="Birria Quesadilla — Los Potrillos"
+          <img src="/wp-content/uploads/2026/06/QUESi_BIRRIA.jpg" alt="Birria Quesadilla — Los Potrillos"
             style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="padding:22px 24px 26px;">
@@ -437,7 +437,7 @@ get_header(); ?>
           <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Birria Quesadilla</h3>
           <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Hand-pressed quesadilla filled with our signature birria and melted Oaxacan cheese.</p>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-            <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$15.00</span>
+            <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$16.00</span>
             <a href="https://los-potrillos-restaurant.cloveronline.com/menu/beef-birria-quesadilla-5RS5Q193RGP2M"
               style="font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;padding:9px 18px;border-radius:3px;text-decoration:none;border:2px solid #C0392B;background:#C0392B;color:#fff;transition:background 0.2s;white-space:nowrap;"
               onmouseover="this.style.background='#a93226';this.style.borderColor='#a93226'"
@@ -522,18 +522,18 @@ get_header(); ?>
         </div>
       </div>
 
-      <!-- CARD 6 — Chicken Birria Tacos -->
+      <!-- CARD 6 — Steak Tacos -->
       <div style="background:#fff;border:1px solid #ece8e2;border-radius:4px;overflow:hidden;transition:transform 0.28s ease,box-shadow 0.28s ease;"
         onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'"
         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
         <div style="height:220px;overflow:hidden;">
-          <img src="/wp-content/uploads/2026/05/ChickenBirriaTacos-scaled.png" alt="Chicken Birria Tacos — Los Potrillos"
+          <img src="/wp-content/uploads/2026/06/STEAK_TACOS.jpg" alt="Steak Tacos — Los Potrillos"
             style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="padding:22px 24px 26px;">
-          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;font-weight:600;color:#C0392B;margin:0 0 6px 0;">Birria</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Chicken Birria Tacos</h3>
-          <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Slow-cooked chicken birria, Oaxacan cheese, consomé for dipping. A lighter take on our signature.</p>
+          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;font-weight:600;color:#C0392B;margin:0 0 6px 0;">Steak</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#1a1a1a;margin:0 0 8px 0;line-height:1.25;">Steak Tacos</h3>
+          <p style="font-family:'Lato',sans-serif;font-size:0.8rem;color:#888;line-height:1.65;margin:0 0 18px 0;">Slow-cooked steak, Oaxacan cheese, consomé for dipping. A lighter take on our signature.</p>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
             <span style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a1a;">$15.00</span>
             <a href="https://los-potrillos-restaurant.cloveronline.com/menu/chicken-birria-tacos-3-CESTXNRFQY56J"

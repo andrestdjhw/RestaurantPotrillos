@@ -34,7 +34,23 @@ function FloatingOrderBar() {
         <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: "14px", height: "14px", color: "#fff" }}>
           <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 3c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7 3.134-7 7-7zm1 3.5h-2.5A3.5 3.5 0 007 12a3.5 3.5 0 003.5 3.5H13a.5.5 0 00.5-.5v-3H11v1.5h1v.5h-.5A2 2 0 019 12a2 2 0 012-2h2V8.5z"/>
         </svg>
-      ),
+      )
+    },
+    {
+      name:  "Menú",
+      url:   "https://fromtherestaurant.com/los-potrillos-restaurant/locations/",
+      from:  "#C0392B", to: "#a93226", border: "#C0392B",
+      icon: (
+        <svg viewBox="5 6 52 52" fill="currentColor" style={{ width: "14px", height: "14px", color: "#fff" }}>
+          <rect x="16.8" y="8" width="2.6" height="13" rx="1.3"/>
+          <rect x="20.7" y="8" width="2.6" height="13" rx="1.3"/>
+          <rect x="24.6" y="8" width="2.6" height="13" rx="1.3"/>
+          <rect x="16.8" y="19" width="10.4" height="5" rx="2.5"/>
+          <rect x="20" y="23" width="4" height="33" rx="2"/>
+          <path d="M45 33 L45 12 Q45 8 42 8 Q40 11 40 21 L40 33 Z"/>
+          <rect x="40" y="31" width="5" height="25" rx="2.5"/>
+        </svg>
+      )
     },
   ]
 
