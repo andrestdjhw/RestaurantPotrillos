@@ -386,23 +386,19 @@ get_header(); ?>
 
 
 <!-- ═══════════════════════════════════════════════
-  REVIEW — SOCIAL PROOF
+  REVIEWS — GOOGLE (Trustindex)
 ═══════════════════════════════════════════════ -->
-<section style="background:#1a0800;padding:72px 24px;">
-  <div style="max-width:820px;margin:0 auto;text-align:center;">
+<section class="st-reviews" style="--st-review-pattern:url('<?php echo esc_url($img['pattern_reviews']); ?>'); --st-review-stamp:url('<?php echo esc_url($img['stamp_round']); ?>')">
+  <?php echo do_shortcode('[trustindex no-registration=google]'); ?>
 
-    <div style="color:#e6a817;font-size:1.1rem;letter-spacing:0.1em;margin-bottom:24px;">★★★★★</div>
-
-    <blockquote style="margin:0 0 28px 0;">
-      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.2rem,2.5vw,1.65rem);color:#fff;line-height:1.65;margin:0;">
-        "We had Los Potrillos cater our daughter's quinceañera and it was the highlight of the night. The food arrived hot, the portions were enormous, and every single guest asked us for the name of the caterer. We will never use anyone else."
-      </p>
-    </blockquote>
-
-    <cite style="font-family:'Lato',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.45);font-style:normal;letter-spacing:0.05em;text-transform:uppercase;">
-      — Carlos R. · Verified Google Review
-    </cite>
-
+  <div style="text-align:center;margin-top:32px;">
+    <a href="https://www.google.com/maps/place/LOS+POTRILLOS+RESTAURANT/@39.9900503,-75.0937738,17z/data=!4m15!1m8!3m7!1s0x89c6c9d87bf20bf1:0x4d8435515dadc26b!2s2617+E+Venango+St,+Philadelphia,+PA+19134,+EE.+UU.!3b1!8m2!3d39.9900503!4d-75.0937738!16s%2Fg%2F11c164m9wv!3m5!1s0x89c6b7bc71190001:0xa44c7bbd8e214cdb!8m2!3d39.9900374!4d-75.0937434!16s%2Fg%2F11hbv7knck?hl=es-ES"
+      target="_blank" rel="noopener" class="ct-btn-primary">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
+        <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
+      </svg>
+      Read Our Reviews on Google →
+    </a>
   </div>
 </section>
 
