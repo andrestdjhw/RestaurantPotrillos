@@ -5,10 +5,29 @@ function FloatingOrderBar() {
   const [dismissed, setDismissed] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!dismissed) setVisible(true)
-    }, 2000)
-    return () => clearTimeout(timer)
+    if (dismissed) return
+
+    // Show once the visitor scrolls past the page's hero panel.
+    // Falls back to a fixed scroll distance on pages without a recognized hero.
+    const heroEl = document.querySelector(
+      ".hp-hero, .ct-hero, .os-hero, .co-hero, .mn-hero"
+    )
+    const fallbackThreshold = window.innerHeight * 0.8
+
+    const getThreshold = () =>
+      heroEl ? heroEl.getBoundingClientRect().bottom + window.scrollY : fallbackThreshold
+
+    const onScroll = () => {
+      setVisible(window.scrollY > getThreshold() - 80)
+    }
+
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+    }
   }, [dismissed])
 
   if (dismissed) return null

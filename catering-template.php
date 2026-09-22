@@ -3,525 +3,503 @@
  * Template Name: Catering Template
  */
 
-get_header(); ?>
+get_header();
+
+/*
+ * Catering menu — edit here.
+ * Each item: name, price, optional serves / detail lines.
+ * Prices and items come from the owner's catering menu PDF — confirm before changing.
+ */
+$m_a = 'Chicken, Deep Fried Pork, Chorizo, Ground Beef, Lamb';
+$m_b = 'Season Pork, Steak, Beef Tongue, Tripe, Chicken Breast, Chorizo & Chicken, Chorizo & Egg, Shrimp & Steak, Shrimp, Salmon, or Fish (Pollock)';
+$m_c = 'Season Pork, Grilled Steak, Chorizo & Steak, Cow Tongue, Beef Tripe, Chicken Breast, Chorizo & Chicken, Chorizo & Eggs, Shrimp & Steak, Shrimp, Salmon, Fish (Pollock)';
+$t_plain   = 'Includes onion, cilantro, lime, red salsa, and green salsa.';
+$t_supreme = 'Includes cheese, lettuce, avocado, pico de gallo, sour cream, lime, red salsa, and green salsa.';
+$plat      = 'Comes with yellow rice, beans, lettuce, pico de gallo, and tortillas.';
+
+$menu = [
+  [
+    'title' => 'Tacos',
+    'sub'   => 'Includes onion, cilantro, lime, red salsa and green salsa.',
+    'icon'  => 'taco',
+    'items' => [
+      ['name' => '30 Tacos',         'serves' => 'Serves 10 people', 'price' => '$75',  'detail' => [$t_plain,   "Meat options: $m_a."]],
+      ['name' => '30 Supreme Tacos', 'serves' => 'Serves 10 people', 'price' => '$105', 'detail' => [$t_supreme, "Meat options: $m_a."]],
+      ['name' => '30 Tacos',         'serves' => 'Serves 10 people', 'price' => '$105', 'detail' => [$t_plain,   "Meat options: $m_b."]],
+      ['name' => '30 Supreme Tacos', 'serves' => 'Serves 10 people', 'price' => '$135', 'detail' => [$t_supreme, "Meat options: $m_c."]],
+      ['name' => '60 Tacos',         'serves' => 'Serves 20 people', 'price' => '$150', 'detail' => [$t_plain,   "Meat options: $m_a."]],
+      ['name' => '60 Supreme Tacos', 'serves' => 'Serves 20 people', 'price' => '$210', 'detail' => [$t_supreme, "Meat options: $m_a."]],
+      ['name' => '60 Tacos',         'serves' => 'Serves 20 people', 'price' => '$210', 'detail' => [$t_plain,   "Meat options: $m_c."]],
+      ['name' => '60 Supreme Tacos', 'serves' => 'Serves 20 people', 'price' => '$270', 'detail' => [$t_supreme, "Meat options: $m_c."]],
+    ],
+  ],
+  [
+    'title' => 'Platters by the Dozen',
+    'sub'   => 'Tacos, rice platters, fajitas and more.',
+    'icon'  => 'cloche',
+    'items' => [
+      ['name' => '12 Orders of Fried Mojarras',              'price' => '$180', 'detail' => [$plat]],
+      ['name' => '12 Orders of Chicken Breast Platters',     'price' => '$180', 'detail' => [$plat]],
+      ['name' => '12 Orders of Chile Relleno Platters',      'price' => '$156', 'detail' => [$plat]],
+      ['name' => '12 Orders Chicken & Rice Platters',        'price' => '$144', 'detail' => [$plat]],
+      ['name' => '12 Orders Chicken Enchilada (Red or green) Platters', 'price' => '$156', 'detail' => [$plat]],
+      ['name' => '12 Orders Mole Enchilada Platters',        'price' => '$156', 'detail' => [$plat]],
+      ['name' => '12 Fajita Platters',                       'price' => '$180', 'detail' => ['Comes with onions, red peppers, yellow rice, beans, lettuce, pico de gallo, sour cream, tortillas.', 'Meat options: Chicken, Steak, Shrimp, Steak & Shrimp.']],
+      ['name' => '12 Orders Burritos',                       'price' => '$120', 'detail' => ['Meat options: Chicken, Carnitas, Chorizo, Lamb, or Ground Beef.']],
+      ['name' => '12 Orders Burritos',                       'price' => '$144', 'detail' => ['Meat options: Steak, Beef Tongue, Tripe, Chicken Breast, Chorizo & Chicken, Chorizo & Egg, Shrimp & Steak, Shrimp, Salmon, or Fish (Pollock).']],
+      ['name' => '12 Orders Flauta (3 pcs each)',            'price' => '$72',  'detail' => ['Comes with salsa verde, lettuce, sour cream, pico de gallo, cotija cheese, salsa roja & verde on the side.']],
+      ['name' => '12 Hard Shell Taco Orders (3 pcs each)',   'price' => '$120', 'detail' => ['Comes with cheese, lettuce, pico de gallo, sour cream, avocado, salsa roja & verde on the side.', "Meat options: $m_a, Season Pork, Steak, Beef Tongue, Tripe, Chicken Breast, Chorizo & Chicken, Chorizo & Egg, Shrimp & Steak, Shrimp, Salmon, or Fish (Pollock)."]],
+      ['name' => '12 Elotes',                                'price' => '$48'],
+      ['name' => '12 Birria Quesadillas',                    'price' => '$156', 'detail' => ['Comes with onion, cilantro and cheese, sour cream, salsa roja & verde on the side.', 'Meat options: Beef, Chicken, Pork. Includes 32 oz birria consommé.']],
+    ],
+  ],
+  [
+    'title' => 'Birria',
+    'sub'   => 'Tacos, quesadillas and consomé.',
+    'icon'  => 'bowl',
+    'items' => [
+      ['name' => '12 Orders (3 pcs each)', 'price' => '$156', 'detail' => ['Includes 32 oz birria consommé.']],
+      ['name' => '24 Orders (3 pcs each)', 'price' => '$312', 'detail' => ['Includes 64 oz birria consommé.']],
+    ],
+  ],
+  [
+    'title' => 'Quesadillas',
+    'sub'   => 'Traditional and premium meat options.',
+    'icon'  => 'quesadilla',
+    'note'  => 'Comes with lettuce, sour cream, pico de gallo and cheese, salsa roja & verde on the side.',
+    'items' => [
+      ['name' => '12 Orders', 'price' => '$108', 'detail' => ['Meat options: Cheese, Chicken, Deep Fried Pork, Chorizo, Ground Beef, Lamb.']],
+      ['name' => '12 Orders', 'price' => '$132', 'detail' => ["Meat options: $m_c."]],
+    ],
+  ],
+  [
+    'title' => 'Empanadas / Tamales',
+    'sub'   => 'Beef, chicken, shrimp, guava, pork and more.',
+    'icon'  => 'empanada',
+    'items' => [
+      ['name' => '12 Empanadas', 'price' => '$36', 'detail' => ['Options: Beef, Chicken, Shrimp, Guava.']],
+      ['name' => '24 Empanadas', 'price' => '$72', 'detail' => ['Options: Beef, Chicken, Shrimp, Guava.']],
+      ['name' => '12 Tamales',   'price' => '$36', 'detail' => ['Options: Pork, Chicken, Rajas (Roasted peppers & onions).']],
+      ['name' => '24 Tamales',   'price' => '$72', 'detail' => ['Options: Pork, Chicken, Rajas (Roasted peppers & onions).']],
+    ],
+  ],
+  [
+    'title' => 'Nachos',
+    'sub'   => 'Half trays and full trays.',
+    'icon'  => 'nachos',
+    'note'  => 'Comes with meat, cheese wiz sauce, pico de gallo, sour cream, monterrey cheese, salsa roja & verde on the side.',
+    'items' => [
+      ['name' => 'Half Tray', 'price' => '$30', 'detail' => ["Meat options: $m_a."]],
+      ['name' => 'Half Tray', 'price' => '$45', 'detail' => ['Meat options: Steak, Beef Tongue, Tripe, Chicken Breast, Chorizo & Chicken, Chorizo & Egg, Shrimp & Steak, Shrimp, Salmon, or Fish (Pollock).']],
+      ['name' => 'Full Tray', 'price' => '$45', 'detail' => ["Meat options: $m_a."]],
+      ['name' => 'Full Tray', 'price' => '$55', 'detail' => ["Meat options: $m_c."]],
+      ['name' => 'Half Tray Chips & Salsa', 'price' => '$15', 'detail' => ['No meat selection.']],
+    ],
+  ],
+  [
+    'title' => 'Sides & Extras',
+    'sub'   => 'Rice, beans, guacamole, chips and salsas.',
+    'icon'  => 'sides',
+    'items' => [
+      ['name' => '32 oz Fresh Sour Cream',          'price' => '$15'],
+      ['name' => '32 oz Homemade Green Salsa',      'price' => '$12'],
+      ['name' => '32 oz Homemade Red Salsa',        'price' => '$12'],
+      ['name' => '32 oz Fresh Pico de Gallo',       'price' => '$12'],
+      ['name' => 'Guacamole with Chips - Half Tray', 'price' => '$45'],
+      ['name' => 'Guacamole with Chips - Full Tray', 'price' => '$90'],
+      ['name' => 'Yellow Rice - Half Tray',         'price' => '$25'],
+      ['name' => 'Yellow Rice - Full Tray',         'price' => '$45'],
+      ['name' => 'Beans - Half Tray',               'price' => '$20'],
+      ['name' => 'Beans - Full Tray',               'price' => '$40'],
+    ],
+  ],
+  [
+    'title' => 'Desserts & Drinks',
+    'sub'   => 'Churros, aguas frescas, Mexican cokes and more.',
+    'icon'  => 'drink',
+    'items' => [
+      ['name' => '12 Orders of Churros (3 pcs each)',                'price' => '$72'],
+      ['name' => '1 Gallon of Horchata, Passion Fruit, or Tamarind', 'price' => '$20'],
+      ['name' => '12 Jarritos',                                      'price' => '$36'],
+      ['name' => '12 Mexican Cokes',                                 'price' => '$48'],
+      ['name' => '12 Canned Sodas',                                  'price' => '$18'],
+    ],
+  ],
+];
+
+$icons = [
+  'taco'       => '<path d="M3 18a9 9 0 0 1 18 0z"/><path d="M7 15l1.5-3M11.5 15l1.5-4M16 15l1-2.5"/>',
+  'cloche'     => '<path d="M3 18h18M5 18a7 7 0 0 1 14 0M12 8.5V6.5M10 6.5h4"/>',
+  'bowl'       => '<path d="M3 12h18a9 7 0 0 1-18 0zM9 4c-1.2 1.2 1.2 2.4 0 3.6M13 4c-1.2 1.2 1.2 2.4 0 3.6"/>',
+  'quesadilla' => '<path d="M3 17a9 9 0 0 1 18 0zM3 17h18M8 13l1.5 4M12.5 11.5l.5 5.5"/>',
+  'empanada'   => '<path d="M3 17c0-5.5 4-10 9-10s9 4.5 9 10z"/><path d="M5.5 17v2M9 17v2M12.5 17v2M16 17v2M19 17v2"/>',
+  'nachos'     => '<path d="M3 19l5-10 5 10zM11 19l5-10 5 10z"/>',
+  'sides'      => '<path d="M3 11h18a9 7 0 0 1-18 0zM8 8c1-2.5 3-2.5 4 0 1-2.5 3-2.5 4 0"/>',
+  'drink'      => '<path d="M7 8h10l-1.2 12H8.2zM12 8V3.5L15.5 2"/>',
+];
+
+$events = [
+  ['label' => 'Family',    'title' => 'Family Celebrations', 'copy' => 'Quinceañeras · Weddings · Birthdays · Baptisms · Anniversaries',        'img' => '/wp-content/uploads/2026/05/FamilyCelebrationsResPotrillos-scaled.jpg', 'alt' => 'Family celebrations catering — quinceañeras, weddings, birthdays'],
+  ['label' => 'Corporate', 'title' => 'Corporate Events',    'copy' => 'Office Lunches · Team Gatherings · Holiday Parties · Conferences',         'img' => '/wp-content/uploads/2026/05/CorporateEventsResPotrillos-scaled.jpg',    'alt' => 'Corporate catering — office lunches, team gatherings, holiday parties'],
+  ['label' => 'Community', 'title' => 'Community Events',    'copy' => 'Church Gatherings · School Functions · Block Parties · Festivals',          'img' => '/wp-content/uploads/2026/05/ComunityEventsResPotrillos-scaled.jpg',     'alt' => 'Community events catering — church gatherings, school functions, block parties'],
+];
+
+$faqs = [
+  ['q' => 'How far in advance do I need to place my catering order?',
+   'a' => 'Catering orders must be placed at least 24 hours in advance. We need that time to prepare your order properly in our kitchen. Requests submitted less than 24 hours before the requested event or pickup time cannot be accommodated. For large events, we recommend contacting us even earlier.'],
+  ['q' => 'Do you have a minimum guest count?',
+   'a' => 'Our catering starts at 20 guests. For smaller gatherings, you are welcome to order pickup through our online store.'],
+  ['q' => 'Do you offer delivery for catering?',
+   'a' => 'Delivery may be available depending on the event location, date and order. Our team will confirm delivery options and any applicable fee when we review your catering request. The $3 / $4 / $6 local delivery fees advertised on the Home page are for qualifying regular phone orders and should not be automatically applied to catering.'],
+  ['q' => 'Can you accommodate dietary restrictions?',
+   'a' => 'We offer vegetarian, gluten-aware, and dairy-free options. Let us know when you request your quote and we will build your menu accordingly.'],
+  ['q' => 'What is included in the catering service?',
+   'a' => 'Every catering package includes food, serving equipment, and setup at your event location. Staffing and additional equipment are available on request - ask us for details.'],
+  ['q' => 'How do I pay, and is a deposit required?',
+   'a' => 'We require a 30% deposit to confirm your booking, with the balance due on the day of the event. We accept cash, Zelle, and major credit cards.'],
+];
+?>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Oswald:wght@500;600;700&family=Lato:wght@400;700&display=swap');
 
-/* ── SHARED ─────────────────────────────────────── */
+:root {
+  --ct-red: #b71c1c;
+  --ct-red-dark: #8f1414;
+  --ct-brown: #2a0f08;
+  --ct-cream: #f7f1e6;
+  --ct-cream-2: #efe6d6;
+  --ct-gold: #a9741f;
+}
+
+.ct-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
 .ct-eyebrow {
   font-family: 'Oswald', sans-serif; text-transform: uppercase;
-  letter-spacing: 0.18em; font-size: 0.62rem; font-weight: 600;
-  color: #C0392B; margin: 0 0 14px 0;
+  letter-spacing: 0.3em; font-size: 0.75rem; font-weight: 600;
+  color: var(--ct-red); margin: 0 0 14px 0;
 }
-.ct-btn-primary {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: 'Oswald', sans-serif; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  font-size: 0.83rem; padding: 14px 26px; border-radius: 3px;
-  text-decoration: none; white-space: nowrap;
-  border: 2px solid #C0392B; background: #C0392B; color: #fff;
-  transition: background 0.2s, border-color 0.2s, transform 0.15s;
-  cursor: pointer;
+.ct-h2 {
+  font-family: 'Playfair Display', serif; font-weight: 800; color: var(--ct-brown);
+  font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.1; margin: 0 0 12px 0; letter-spacing: -0.01em;
 }
-.ct-btn-primary:hover { background: #a93226; border-color: #a93226; transform: translateY(-2px); }
-
-.ct-btn-secondary {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: 'Oswald', sans-serif; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  font-size: 0.83rem; padding: 14px 26px; border-radius: 3px;
-  text-decoration: none; white-space: nowrap;
-  border: 2px solid #1a1a1a; background: transparent; color: #1a1a1a;
-  transition: background 0.2s, color 0.2s, transform 0.15s;
-  cursor: pointer;
-}
-.ct-btn-secondary:hover { background: #1a1a1a; color: #fff; transform: translateY(-2px); }
+.ct-script { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; }
 
 /* ── HERO ───────────────────────────────────────── */
 .ct-hero {
-  display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 82vh; background: #fff;
+  position: relative; background: var(--ct-cream); overflow: hidden;
+  display: grid; grid-template-columns: 1.05fr 1fr; min-height: 380px;
 }
 .ct-hero-left {
+  position: relative; z-index: 2;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 60px 52px 60px 5vw;
+  padding: 44px 24px 44px max(24px, calc(50vw - 700px));
 }
-.ct-hero-right { position: relative; overflow: hidden; }
-.ct-hero-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.ct-hero-right::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(255,255,255,0.08) 0%, transparent 40%);
+.ct-hero h1 {
+  font-family: 'Playfair Display', serif; font-weight: 800; color: var(--ct-brown);
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem); line-height: 1.05; margin: 0 0 16px 0; letter-spacing: -0.01em;
 }
+.ct-hero-sub { font-family: 'Lato', sans-serif; font-size: 1.05rem; line-height: 1.6; color: #3a2a24; margin: 0 0 24px 0; max-width: 520px; }
+.ct-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.ct-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 0.85rem; padding: 14px 24px; border-radius: 3px; text-decoration: none; white-space: nowrap;
+  border: 2px solid var(--ct-red); transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.ct-btn:hover { transform: translateY(-2px); }
+.ct-btn-primary { background: var(--ct-red); color: #fff; }
+.ct-btn-primary:hover { background: var(--ct-red-dark); border-color: var(--ct-red-dark); }
+.ct-btn-outline { background: transparent; color: var(--ct-red); }
+.ct-btn-outline:hover { background: var(--ct-red); color: #fff; }
+.ct-hero-note { font-family: 'Lato', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--ct-red-dark); margin: 0; }
 
-/* ── EVENT TYPES ────────────────────────────────── */
-.ct-events-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+/* ── EVENTS WE CATER ────────────────────────────── */
+.ct-events { background: #fff; padding: 64px 0 40px; }
+.ct-events-head { text-align: center; margin-bottom: 40px; }
+.ct-events-head .ct-eyebrow { display: flex; justify-content: center; }
+.ct-events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ct-event-card { position: relative; height: 380px; overflow: hidden; border-radius: 4px; }
+.ct-event-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ct-event-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 55%, transparent 100%); }
+.ct-event-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px; }
+.ct-event-label { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.7rem; font-weight: 600; color: rgba(232,192,122,0.95); margin: 0 0 6px 0; }
+.ct-event-title { font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 800; color: #fff; margin: 0 0 8px 0; line-height: 1.15; }
+.ct-event-copy { font-family: 'Lato', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.6; }
+.ct-notice {
+  margin-top: 32px; padding: 18px 24px; background: #fbeeea; border-left: 4px solid var(--ct-red); border-radius: 3px;
+  font-family: 'Lato', sans-serif; font-size: 0.92rem; line-height: 1.6; color: #3a2a24;
 }
-.ct-event-card {
-  position: relative; height: 380px; overflow: hidden; border-radius: 4px;
-}
-.ct-event-card img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.ct-event-card:hover img { transform: scale(1.05); }
-.ct-event-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
-}
-.ct-event-content {
-  position: absolute; bottom: 0; left: 0; right: 0; padding: 28px;
-}
+.ct-notice strong { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ct-red); margin-right: 8px; font-size: 0.95rem; }
 
-/* ── HOW IT WORKS ───────────────────────────────── */
-.ct-steps-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+.ct-hero-media { position: relative; overflow: hidden; background: var(--ct-brown); }
+.ct-hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ct-hero-media::before {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to right, var(--ct-cream) 0%, rgba(247,241,230,0) 30%);
 }
-.ct-step-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem; font-weight: 800;
-  color: rgba(192,57,43,0.12); line-height: 1;
-  margin-bottom: 12px;
+.ct-hero-tag {
+  position: absolute; z-index: 2; top: 36px; right: 40px; text-align: right;
+  font-size: clamp(1.3rem, 2.4vw, 2rem); line-height: 1.1; color: #fff;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.6);
 }
+.ct-hero-tag::after { content: ''; display: block; width: 70%; height: 4px; border-radius: 4px; background: #d9a441; margin: 8px 0 0 auto; }
 
-/* ── MENU SAMPLES ───────────────────────────────── */
-.ct-menu-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-}
-.ct-menu-card {
-  background: #fff; border: 1px solid #e8e2d8;
-  border-top: 3px solid #C0392B; padding: 24px;
-}
+/* ── MENU + FORM ────────────────────────────────── */
+.ct-main { background: #faf6ee; padding: 56px 0 64px; }
+.ct-main-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 40px; align-items: start; }
+.ct-menu-sub { font-family: 'Lato', sans-serif; font-size: 1.02rem; line-height: 1.6; color: #3a2a24; margin: 0 0 22px 0; max-width: 520px; }
 
-/* ── FORM + PITCH ───────────────────────────────── */
-.ct-form-section {
-  display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start;
+.ct-acc details { background: #fff; border: 1px solid #e6dcc9; border-radius: 4px; margin-bottom: 10px; overflow: hidden; }
+.ct-acc summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; gap: 16px;
+  padding: 14px 20px; user-select: none; color: var(--ct-brown);
 }
+.ct-acc summary::-webkit-details-marker { display: none; }
+.ct-acc-icon { width: 44px; height: 44px; color: var(--ct-red); flex-shrink: 0; }
+.ct-acc-text { flex: 1; min-width: 0; }
+.ct-acc-title { display: block; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 1.1rem; font-weight: 600; margin: 0; }
+.ct-acc-sub { display: block; font-family: 'Lato', sans-serif; font-size: 0.85rem; margin: 2px 0 0 0; color: #5a4d46; }
+.ct-acc-note { font-family: 'Lato', sans-serif; font-size: 0.88rem; line-height: 1.55; color: #5a4d46; background: #faf6ee; border-left: 3px solid var(--ct-gold); padding: 10px 14px; margin: 14px 0 4px; }
+.ct-acc-chev { width: 20px; height: 20px; flex-shrink: 0; transition: transform 0.25s; }
+.ct-acc details[open] > summary { background: var(--ct-red); color: #fff; }
+.ct-acc details[open] .ct-acc-icon, .ct-acc details[open] .ct-acc-sub { color: #fff; }
+.ct-acc details[open] .ct-acc-chev { transform: rotate(180deg); }
+.ct-acc-body { padding: 4px 24px 8px; }
+.ct-item { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid #ece3d2; }
+.ct-item:last-child { border-bottom: 0; }
+.ct-item-name { font-family: 'Lato', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--ct-brown); margin: 0; }
+.ct-item-serves { font-family: 'Lato', sans-serif; font-size: 0.85rem; color: #5a4d46; margin: 2px 0 0 0; }
+.ct-item-detail { font-family: 'Lato', sans-serif; font-size: 0.85rem; line-height: 1.55; color: #5a4d46; margin: 2px 0 0 0; }
+.ct-item-price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--ct-red); white-space: nowrap; }
 
-/* ── GALLERY ────────────────────────────────────── */
-.ct-gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 260px 260px;
-  gap: 8px;
+.ct-form-col { position: sticky; top: 110px; }
+
+/* ── FAQ ────────────────────────────────────────── */
+.ct-faq-sec { background: #fff; padding: 64px 0; }
+.ct-faq-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.ct-faq-inner h2 { text-align: center; margin-bottom: 32px; }
+.ct-faq-inner details { border-bottom: 1px solid #ebe3d2; }
+.ct-faq-inner summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 0; font-family: 'Lato', sans-serif; font-size: 0.98rem; font-weight: 700; color: var(--ct-brown); user-select: none;
 }
-.ct-gallery-item { overflow: hidden; }
-.ct-gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.ct-gallery-item:hover img { transform: scale(1.05); }
-.ct-gallery-item:first-child { grid-row: 1 / 3; }
+.ct-faq-inner summary::-webkit-details-marker { display: none; }
+.ct-faq-inner summary svg { width: 16px; height: 16px; color: var(--ct-red); flex-shrink: 0; margin-left: 16px; transition: transform 0.2s; }
+.ct-faq-inner details[open] summary svg { transform: rotate(180deg); }
+.ct-faq-a { padding: 0 32px 18px 0; font-family: 'Lato', sans-serif; font-size: 0.9rem; color: #555; line-height: 1.8; }
+
+/* ── BOTTOM BAND ────────────────────────────────── */
+.ct-band { display: grid; grid-template-columns: 1fr 1.6fr; background: var(--ct-brown); min-height: 190px; overflow: hidden; }
+.ct-band-img { position: relative; overflow: hidden; }
+.ct-band-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ct-band-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(42,15,8,0) 60%, var(--ct-brown) 100%); }
+.ct-band-body { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; align-items: center; padding: 28px max(24px, calc(50vw - 700px)) 28px 24px; }
+.ct-band-tagline { color: #fff; font-size: clamp(1.3rem, 2.3vw, 1.9rem); line-height: 1.15; transform: rotate(-3deg); }
+.ct-band-tagline::after { content: ''; display: block; width: 60%; height: 4px; border-radius: 4px; background: #d9a441; margin-top: 8px; }
+.ct-band-item {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; color: #fff;
+  padding: 6px 12px; border-left: 1px solid rgba(255,255,255,0.22);
+  font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; font-weight: 600; line-height: 1.25;
+}
+.ct-band-item svg { width: 40px; height: 40px; }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
-@media (max-width: 960px) {
-  .ct-hero { grid-template-columns: 1fr; min-height: auto; }
-  .ct-hero-right { height: 300px; order: -1; }
-  .ct-hero-left { padding: 36px 24px 44px; }
+@media (max-width: 1000px) {
+  .ct-hero { grid-template-columns: 1fr; }
+  .ct-hero-media { order: -1; height: 240px; }
+  .ct-hero-media::before { background: linear-gradient(to top, var(--ct-cream) 0%, rgba(247,241,230,0) 35%); }
+  .ct-hero-left { padding: 28px 24px 36px; }
+  .ct-hero-tag { top: 20px; right: 20px; }
   .ct-events-grid { grid-template-columns: 1fr; }
   .ct-event-card { height: 300px; }
-  .ct-steps-grid { grid-template-columns: 1fr 1fr; }
-  .ct-menu-grid { grid-template-columns: 1fr; }
-  .ct-form-section { grid-template-columns: 1fr; gap: 36px; }
-  .ct-gallery {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-  .ct-gallery-item:first-child { grid-row: auto; }
+  .ct-main-grid { grid-template-columns: 1fr; }
+  .ct-form-col { position: static; }
+  .ct-band { grid-template-columns: 1fr; }
+  .ct-band-img { height: 180px; }
+  .ct-band-img::after { background: linear-gradient(to bottom, rgba(42,15,8,0) 60%, var(--ct-brown) 100%); }
+  .ct-band-body { grid-template-columns: repeat(3, 1fr); gap: 20px 0; padding: 28px 24px; }
+  .ct-band-tagline { grid-column: 1 / -1; transform: none; }
 }
 @media (max-width: 600px) {
-  .ct-steps-grid { grid-template-columns: 1fr; }
-  .ct-gallery { grid-template-columns: 1fr; }
+  .ct-hero-ctas .ct-btn { flex: 1 1 100%; }
+  .ct-acc summary { padding: 12px 14px; gap: 12px; }
+  .ct-acc-icon { width: 36px; height: 36px; }
+  .ct-acc-body { padding: 4px 16px 8px; }
+  .ct-band-item { font-size: 0.72rem; padding: 6px 6px; }
 }
 </style>
-
 
 <!-- ═══════════════════════════════════════════════
   HERO
 ═══════════════════════════════════════════════ -->
 <section class="ct-hero">
-
   <div class="ct-hero-left">
     <p class="ct-eyebrow">Catering — For Events That Matter</p>
+    <h1>Real Puebla Flavor. For Your Most Important Events.</h1>
+    <p class="ct-hero-sub">From intimate family dinners to quinceañeras with 300 guests — we bring the same family recipe, the same generous portions, and the same care to every table we serve.</p>
 
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:800;line-height:1.15;color:#1a1a1a;margin:0 0 20px 0;letter-spacing:-0.01em;">
-      Real Puebla Flavor.<br>
-      <em style="color:#C0392B;font-style:italic;">For Your Most Important Events.</em>
-    </h1>
-
-    <p style="font-family:'Lato',sans-serif;font-size:0.95rem;color:#555;line-height:1.85;margin:0 0 28px 0;max-width:440px;">
-      From intimate family dinners to quinceañeras with 300 guests — we bring the same family recipe, the same generous portions, and the same care to every table we serve.
-    </p>
-
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:32px;">
-      <span style="color:#e6a817;font-size:0.9rem;">★★★★★</span>
-      <span style="font-family:'Lato',sans-serif;font-size:0.77rem;color:#555;font-weight:700;">Trusted by hundreds of Philadelphia families</span>
+    <div class="ct-hero-ctas">
+      <a href="#catering-form" class="ct-btn ct-btn-primary" data-track="catering_click">Get a Free Quote →</a>
+      <a href="tel:+12673232669" class="ct-btn ct-btn-outline">Call Us Directly</a>
     </div>
-
-    <div style="display:flex;flex-wrap:wrap;gap:12px;">
-      <a href="#catering-form" class="ct-btn-primary">Get a Free Quote →</a>
-      <a href="tel:+12673232669" class="ct-btn-secondary">Call Us Directly</a>
-    </div>
+    <p class="ct-hero-note">Catering requires at least 24 hours' advance notice.</p>
   </div>
 
-  <div class="ct-hero-right">
-    <img src="/wp-content/uploads/2026/05/CateringTacosService-scaled.jpg" alt="Los Potrillos catering — Puebla-style food for events and celebrations in Philadelphia">
+  <div class="ct-hero-media">
+    <img src="/wp-content/uploads/2026/05/CateringTacosService-scaled.jpg" alt="Mexican catering trays from Los Potrillos Restaurant in Philadelphia">
+    <div class="ct-hero-tag ct-script">Good Food Brings<br>People Together.</div>
   </div>
-
 </section>
 
-
 <!-- ═══════════════════════════════════════════════
-  TRUST BAR
+  EVENTS WE CATER
 ═══════════════════════════════════════════════ -->
-<div style="background:#1a0800;padding:22px 24px;">
-  <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 40px;">
-    <?php
-    $trust_items = [
-      '✓  Custom menus for any event size',
-      '✓  On-time delivery, every time',
-      '✓  We respond within 24 hours',
-      '✓  Family-owned — not a catering company',
-    ];
-    foreach ($trust_items as $item) : ?>
-      <span style="font-family:'Lato',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.75);white-space:nowrap;">
-        <?php echo esc_html($item); ?>
-      </span>
-    <?php endforeach; ?>
-  </div>
-</div>
-
-
-<!-- ═══════════════════════════════════════════════
-  EVENT TYPES
-═══════════════════════════════════════════════ -->
-<section style="background:#fff;padding:80px 24px;">
-  <div style="max-width:1180px;margin:0 auto;">
-
-    <div style="text-align:center;margin-bottom:52px;">
-      <p class="ct-eyebrow" style="justify-content:center;display:flex;">Events We Cater</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;color:#1a1a1a;margin:0;letter-spacing:-0.01em;line-height:1.2;">
-        Every Event. Every Size. Every Guest.
-      </h2>
+<section class="ct-events">
+  <div class="ct-wrap">
+    <div class="ct-events-head">
+      <p class="ct-eyebrow">Events We Cater</p>
+      <h2 class="ct-h2">Every Event. Every Size. Every Guest.</h2>
     </div>
 
     <div class="ct-events-grid">
-
-      <div class="ct-event-card">
-        <img src="/wp-content/uploads/2026/05/FamilyCelebrationsResPotrillos-scaled.jpg" alt="Family celebrations catering — quinceañeras, weddings, birthdays">
-        <div class="ct-event-overlay"></div>
-        <div class="ct-event-content">
-          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.62rem;font-weight:600;color:rgba(232,192,122,0.9);margin:0 0 6px 0;">Family</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:#fff;margin:0 0 8px 0;line-height:1.15;">
-            Family Celebrations
-          </h3>
-          <p style="font-family:'Lato',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.72);margin:0;line-height:1.6;">
-            Quinceañeras · Weddings · Birthdays · Baptisms · Anniversaries
-          </p>
-        </div>
-      </div>
-
-      <div class="ct-event-card">
-        <img src="/wp-content/uploads/2026/05/CorporateEventsResPotrillos-scaled.jpg" alt="Corporate catering — office lunches, team gatherings, holiday parties">
-        <div class="ct-event-overlay"></div>
-        <div class="ct-event-content">
-          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.62rem;font-weight:600;color:rgba(232,192,122,0.9);margin:0 0 6px 0;">Corporate</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:#fff;margin:0 0 8px 0;line-height:1.15;">
-            Corporate Events
-          </h3>
-          <p style="font-family:'Lato',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.72);margin:0;line-height:1.6;">
-            Office Lunches · Team Gatherings · Holiday Parties · Conferences
-          </p>
-        </div>
-      </div>
-
-      <div class="ct-event-card">
-        <img src="/wp-content/uploads/2026/05/ComunityEventsResPotrillos-scaled.jpg" alt="Community events catering — church gatherings, school functions, block parties">
-        <div class="ct-event-overlay"></div>
-        <div class="ct-event-content">
-          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.62rem;font-weight:600;color:rgba(232,192,122,0.9);margin:0 0 6px 0;">Community</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:#fff;margin:0 0 8px 0;line-height:1.15;">
-            Community Events
-          </h3>
-          <p style="font-family:'Lato',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.72);margin:0;line-height:1.6;">
-            Church Gatherings · School Functions · Block Parties · Festivals
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-  HOW IT WORKS
-═══════════════════════════════════════════════ -->
-<section style="background:#f7f4f0;padding:80px 24px;">
-  <div style="max-width:1180px;margin:0 auto;">
-
-    <div style="text-align:center;margin-bottom:56px;">
-      <p class="ct-eyebrow" style="display:flex;justify-content:center;">The Process</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;color:#1a1a1a;margin:0;letter-spacing:-0.01em;line-height:1.2;">
-        How Catering With Us Works
-      </h2>
-    </div>
-
-    <div class="ct-steps-grid">
-      <?php
-      $steps = [
-        ['num' => '01', 'title' => 'Request Your Quote',    'desc' => 'Fill out our form or give us a call. Tell us your event date, guest count, and any preferences. We reply within 24 hours.'],
-        ['num' => '02', 'title' => 'We Build Your Menu',    'desc' => 'We put together a custom menu around your event, your guests, and your budget. No templates — every event is different.'],
-        ['num' => '03', 'title' => 'We Handle Everything',  'desc' => 'On the day of your event, we arrive on time with everything ready. Hot food, proper portions, and a team that cares.'],
-        ['num' => '04', 'title' => 'Your Guests Eat Well',  'desc' => 'From the first taco to the last consomé, your guests get the real Los Potrillos experience — the same one we serve every day.'],
-      ];
-      foreach ($steps as $step) : ?>
-        <div>
-          <div class="ct-step-number"><?php echo esc_html($step['num']); ?></div>
-          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75rem;font-weight:600;color:#1a1a1a;margin:0 0 10px 0;">
-            <?php echo esc_html($step['title']); ?>
-          </p>
-          <p style="font-family:'Lato',sans-serif;font-size:0.85rem;color:#666;line-height:1.8;margin:0;">
-            <?php echo esc_html($step['desc']); ?>
-          </p>
-        </div>
-      <?php endforeach; ?>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-  MENU SAMPLES
-═══════════════════════════════════════════════ -->
-<section style="background:#fff;padding:80px 24px;">
-  <div style="max-width:1180px;margin:0 auto;">
-
-    <div style="text-align:center;margin-bottom:52px;">
-      <p class="ct-eyebrow" style="display:flex;justify-content:center;">What We Serve</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;color:#1a1a1a;margin:0 0 14px 0;letter-spacing:-0.01em;line-height:1.2;">
-        Sample Catering Menu
-      </h2>
-      <p style="font-family:'Lato',sans-serif;font-size:0.88rem;color:#888;max-width:520px;margin:0 auto;line-height:1.75;">
-        Every menu is customized for your event. These are examples of what we commonly serve — tell us your preferences and we'll build around you.
-      </p>
-    </div>
-
-    <div class="ct-menu-grid">
-      <?php
-      $menu_items = [
-        [
-          'category' => 'Signature Proteins',
-          'items'    => ['Birria de Res (slow-cooked beef)', 'Pollo en Mole Rojo', 'Carnitas estilo Michoacán', 'Pastor al trompo', 'Barbacoa de borrego'],
-        ],
-        [
-          'category' => 'Tacos & Handhelds',
-          'items'    => ['Quesabirria tacos with consomé', 'Tacos de canasta', 'Flautas doradas', 'Tostadas de tinga', 'Gorditas rellenas'],
-        ],
-        [
-          'category' => 'Sides & Accompaniments',
-          'items'    => ['Arroz rojo estilo Puebla', 'Frijoles de la olla', 'Guacamole fresco', 'Salsas (roja, verde, habanero)', 'Cebollitas asadas'],
-        ],
-        [
-          'category' => 'Drinks & Aguas',
-          'items'    => ['Agua de jamaica', 'Agua de tamarindo', 'Horchata', 'Agua de limón', 'Ponche caliente (seasonal)'],
-        ],
-        [
-          'category' => 'Desserts',
-          'items'    => ['Tres leches cake', 'Flan napolitano', 'Churros con chocolate', 'Buñuelos', 'Arroz con leche'],
-        ],
-        [
-          'category' => 'Vegetarian Options',
-          'items'    => ['Tacos de rajas con crema', 'Quesadillas de flor de calabaza', 'Enchiladas verdes de queso', 'Pozole verde de hongos', 'Nopales a la mexicana'],
-        ],
-      ];
-      foreach ($menu_items as $section) : ?>
-        <div class="ct-menu-card">
-          <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.12em;font-size:0.68rem;font-weight:600;color:#C0392B;margin:0 0 14px 0;">
-            <?php echo esc_html($section['category']); ?>
-          </p>
-          <ul style="list-style:none;padding:0;margin:0;">
-            <?php foreach ($section['items'] as $item) : ?>
-              <li style="font-family:'Lato',sans-serif;font-size:0.83rem;color:#444;padding:6px 0;border-bottom:1px solid #f3ede6;line-height:1.5;display:flex;align-items:flex-start;gap:8px;">
-                <span style="color:#C0392B;flex-shrink:0;margin-top:2px;">—</span>
-                <?php echo esc_html($item); ?>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-      <?php endforeach; ?>
-    </div>
-
-    <p style="font-family:'Lato',sans-serif;font-size:0.78rem;color:#aaa;text-align:center;margin-top:28px;">
-      Menu items and availability vary by season and event size. All menus are confirmed at time of booking.
-    </p>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-  PHOTO GALLERY
-═══════════════════════════════════════════════ -->
-<!-- <section style="background:#f7f4f0;padding:80px 24px;">
-  <div style="max-width:1180px;margin:0 auto;">
-
-    <div style="text-align:center;margin-bottom:40px;">
-      <p class="ct-eyebrow" style="display:flex;justify-content:center;">Past Events</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;color:#1a1a1a;margin:0;letter-spacing:-0.01em;line-height:1.2;">
-        Real Events. Real Food. Real People.
-      </h2>
-    </div>
-
-    <div class="ct-gallery">
-      <div class="ct-gallery-item"><img src="" alt="Los Potrillos catering event 1"></div>
-      <div class="ct-gallery-item"><img src="" alt="Los Potrillos catering event 2"></div>
-      <div class="ct-gallery-item"><img src="" alt="Los Potrillos catering event 3"></div>
-      <div class="ct-gallery-item"><img src="" alt="Los Potrillos catering event 4"></div>
-      <div class="ct-gallery-item"><img src="" alt="Los Potrillos catering event 5"></div>
-    </div>
-
-  </div>
-</section> -->
-
-
-<!-- ═══════════════════════════════════════════════
-  REVIEWS — GOOGLE (Trustindex)
-═══════════════════════════════════════════════ -->
-<section class="st-reviews" style="--st-review-pattern:url('<?php echo esc_url($img['pattern_reviews']); ?>'); --st-review-stamp:url('<?php echo esc_url($img['stamp_round']); ?>')">
-  <?php echo do_shortcode('[trustindex no-registration=google]'); ?>
-
-  <div style="text-align:center;margin-top:32px;">
-    <a href="https://www.google.com/maps/place/LOS+POTRILLOS+RESTAURANT/@39.9900503,-75.0937738,17z/data=!4m15!1m8!3m7!1s0x89c6c9d87bf20bf1:0x4d8435515dadc26b!2s2617+E+Venango+St,+Philadelphia,+PA+19134,+EE.+UU.!3b1!8m2!3d39.9900503!4d-75.0937738!16s%2Fg%2F11c164m9wv!3m5!1s0x89c6b7bc71190001:0xa44c7bbd8e214cdb!8m2!3d39.9900374!4d-75.0937434!16s%2Fg%2F11hbv7knck?hl=es-ES"
-      target="_blank" rel="noopener" class="ct-btn-primary">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
-        <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
-      </svg>
-      Read Our Reviews on Google →
-    </a>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-  CATERING FORM
-═══════════════════════════════════════════════ -->
-<section id="catering-form" style="background:#faf7f3;padding:80px 24px;">
-  <div style="max-width:1180px;margin:0 auto;">
-    <div class="ct-form-section">
-
-      <!-- LEFT: Pitch -->
-      <div style="position:sticky;top:130px;">
-        <p class="ct-eyebrow">Get Your Free Quote</p>
-
-        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;color:#1a1a1a;line-height:1.2;margin:0 0 20px 0;letter-spacing:-0.01em;">
-          Let's Plan Your Event Together.
-        </h2>
-
-        <p style="font-family:'Lato',sans-serif;font-size:0.9rem;color:#555;line-height:1.85;margin:0 0 32px 0;">
-          Tell us about your event and we'll get back to you within 24 hours with a custom quote. No obligation, no pressure — just real food and a real conversation.
-        </p>
-
-        <!-- Contact alternatives -->
-        <div style="display:flex;flex-direction:column;gap:16px;">
-
-          <a href="tel:+12673232669" style="display:flex;align-items:center;gap:14px;text-decoration:none;padding:16px 20px;background:#fff;border:1px solid #e8e2d8;border-radius:3px;transition:border-color 0.2s;"
-            onmouseover="this.style.borderColor='#C0392B'" onmouseout="this.style.borderColor='#e8e2d8'">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C0392B">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            <div>
-              <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.09em;font-size:0.65rem;font-weight:600;color:#888;margin:0 0 2px 0;">Call Us Directly</p>
-              <p style="font-family:'Lato',sans-serif;font-size:0.92rem;font-weight:700;color:#1a1a1a;margin:0;">(267) 323-2669</p>
-            </div>
-          </a>
-
-          <a href="https://wa.me/12673232669" target="_blank" rel="noopener"
-            style="display:flex;align-items:center;gap:14px;text-decoration:none;padding:16px 20px;background:#fff;border:1px solid #e8e2d8;border-radius:3px;transition:border-color 0.2s;"
-            onmouseover="this.style.borderColor='#25D366'" onmouseout="this.style.borderColor='#e8e2d8'">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <div>
-              <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.09em;font-size:0.65rem;font-weight:600;color:#888;margin:0 0 2px 0;">Message on WhatsApp</p>
-              <p style="font-family:'Lato',sans-serif;font-size:0.92rem;font-weight:700;color:#1a1a1a;margin:0;">(267) 323-2669</p>
-            </div>
-          </a>
-
-          <a href="mailto:info@restaurantpotrillos.com"
-            style="display:flex;align-items:center;gap:14px;text-decoration:none;padding:16px 20px;background:#fff;border:1px solid #e8e2d8;border-radius:3px;transition:border-color 0.2s;"
-            onmouseover="this.style.borderColor='#C0392B'" onmouseout="this.style.borderColor='#e8e2d8'">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.8" stroke-linecap="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <div>
-              <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.09em;font-size:0.65rem;font-weight:600;color:#888;margin:0 0 2px 0;">Send an Email</p>
-              <p style="font-family:'Lato',sans-serif;font-size:0.88rem;font-weight:700;color:#1a1a1a;margin:0;">info@restaurantpotrillos.com</p>
-            </div>
-          </a>
-
-        </div>
-      </div>
-
-      <!-- RIGHT: React form -->
-      <div id="render-catering-form-here"></div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-  FAQ — CATERING SPECIFIC
-═══════════════════════════════════════════════ -->
-<section style="background:#fff;padding:80px 24px;">
-  <div style="max-width:760px;margin:0 auto;">
-
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;color:#1a1a1a;text-align:center;margin:0 0 48px 0;letter-spacing:-0.01em;">
-      Catering Questions
-    </h2>
-
-    <div style="border-top:1px solid #ebebeb;">
-      <?php
-      $faqs = [
-        ['q' => 'How far in advance do I need to book?',
-         'a' => 'We recommend booking at least 2 weeks in advance for smaller events, and 4–6 weeks for large events like quinceañeras or weddings. We occasionally accommodate last-minute requests — call us to check availability.'],
-        ['q' => 'Do you have a minimum guest count?',
-         'a' => 'Our catering starts at 20 guests. For smaller gatherings, you are welcome to order pickup through our online store.'],
-        ['q' => 'Do you deliver, or do we pick up?',
-         'a' => 'We deliver to your event location across Philadelphia and the surrounding counties. Delivery fees vary by distance and event size — we include this in your quote.'],
-        ['q' => 'Can you accommodate dietary restrictions?',
-         'a' => 'Absolutely. We offer vegetarian, gluten-aware, and dairy-free options. Let us know when you request your quote and we will build your menu accordingly.'],
-        ['q' => 'What is included in the catering service?',
-         'a' => 'Every catering package includes food, serving equipment, and setup at your event location. Staffing and additional equipment are available on request — ask us for details.'],
-        ['q' => 'How do I pay, and is a deposit required?',
-         'a' => 'We require a 30% deposit to confirm your booking, with the balance due on the day of the event. We accept cash, Zelle, and major credit cards.'],
-      ];
-      foreach ($faqs as $i => $faq) : ?>
-        <details <?php echo $i === 0 ? 'open' : ''; ?> style="border-bottom:1px solid #ebebeb;">
-          <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-family:'Lato',sans-serif;font-size:0.95rem;font-weight:700;color:#1a1a1a;user-select:none;">
-            <?php echo esc_html($faq['q']); ?>
-            <span style="font-size:1.5rem;font-weight:300;color:#C0392B;flex-shrink:0;margin-left:16px;line-height:1;transition:transform 0.22s;" class="ct-faq-icon">+</span>
-          </summary>
-          <div style="padding:0 40px 20px 0;font-family:'Lato',sans-serif;font-size:0.88rem;color:#555;line-height:1.85;">
-            <?php echo esc_html($faq['a']); ?>
+      <?php foreach ($events as $ev) : ?>
+        <div class="ct-event-card">
+          <img src="<?php echo esc_url($ev['img']); ?>" alt="<?php echo esc_attr($ev['alt']); ?>" loading="lazy">
+          <div class="ct-event-overlay"></div>
+          <div class="ct-event-content">
+            <p class="ct-event-label"><?php echo esc_html($ev['label']); ?></p>
+            <h3 class="ct-event-title"><?php echo esc_html($ev['title']); ?></h3>
+            <p class="ct-event-copy"><?php echo esc_html($ev['copy']); ?></p>
           </div>
-        </details>
+        </div>
       <?php endforeach; ?>
     </div>
 
+    <p class="ct-notice"><strong>24-Hour Advance Notice Required</strong> Great catering takes preparation. Please submit your catering request at least 24 hours before your requested event or pickup time. Requests inside the 24-hour window cannot be accommodated.</p>
   </div>
 </section>
 
-<script>
-  // FAQ icon rotation
-  document.querySelectorAll('.ct-form-section details, details').forEach(el => {
-    el.addEventListener('toggle', () => {
-      const icon = el.querySelector('.ct-faq-icon')
-      if (icon) icon.style.transform = el.open ? 'rotate(45deg)' : 'rotate(0)'
-    })
-  })
+<!-- ═══════════════════════════════════════════════
+  CATERING MENU + QUOTE FORM
+═══════════════════════════════════════════════ -->
+<section class="ct-main">
+  <div class="ct-wrap">
+    <div class="ct-main-grid">
+
+      <div>
+        <p class="ct-eyebrow">Catering Menu</p>
+        <h2 class="ct-h2">Choose What Sounds Good.</h2>
+        <p class="ct-menu-sub">Browse our catering menu below. Let us know what you're interested in, and we'll help you finalize the details. Please submit catering requests at least 24 hours in advance.</p>
+
+        <div class="ct-acc">
+          <?php foreach ($menu as $i => $cat) : ?>
+            <details name="ct-menu" <?php echo $i === 0 ? 'open' : ''; ?>>
+              <summary>
+                <svg class="ct-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><?php echo $icons[$cat['icon']]; ?></svg>
+                <span class="ct-acc-text">
+                  <h3 class="ct-acc-title"><?php echo esc_html($cat['title']); ?></h3>
+                  <span class="ct-acc-sub"><?php echo esc_html($cat['sub']); ?></span>
+                </span>
+                <svg class="ct-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </summary>
+              <div class="ct-acc-body">
+                <?php if (!empty($cat['note'])) : ?>
+                  <p class="ct-acc-note"><?php echo esc_html($cat['note']); ?></p>
+                <?php endif; ?>
+                <?php foreach ($cat['items'] as $item) : ?>
+                  <div class="ct-item">
+                    <div>
+                      <p class="ct-item-name"><?php echo esc_html($item['name']); ?></p>
+                      <?php if (!empty($item['serves'])) : ?>
+                        <p class="ct-item-serves"><?php echo esc_html($item['serves']); ?></p>
+                      <?php endif; ?>
+                      <?php foreach (($item['detail'] ?? []) as $line) : ?>
+                        <p class="ct-item-detail"><?php echo esc_html($line); ?></p>
+                      <?php endforeach; ?>
+                    </div>
+                    <?php if (!empty($item['price'])) : ?>
+                      <span class="ct-item-price"><?php echo esc_html($item['price']); ?></span>
+                    <?php endif; ?>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            </details>
+          <?php endforeach; ?>
+        </div>
+      </div>
+
+      <div id="catering-form" class="ct-form-col">
+        <div id="render-catering-form-here"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+  FAQ
+═══════════════════════════════════════════════ -->
+<script type="application/ld+json">
+<?php echo wp_json_encode([
+  '@context'    => 'https://schema.org',
+  '@type'       => 'Service',
+  'serviceType' => 'Catering',
+  'name'        => 'Mexican Catering in Philadelphia',
+  'description' => 'Authentic Puebla-style Mexican catering for quinceañeras, weddings, office lunches and community events.',
+  'areaServed'  => 'Philadelphia, PA',
+  'provider'    => [
+    '@type'     => 'Restaurant',
+    'name'      => 'Los Potrillos Restaurant',
+    'telephone' => '+1-267-323-2669',
+    'address'   => [
+      '@type'           => 'PostalAddress',
+      'streetAddress'   => '2617 E Venango St',
+      'addressLocality' => 'Philadelphia',
+      'addressRegion'   => 'PA',
+      'postalCode'      => '19134',
+      'addressCountry'  => 'US',
+    ],
+  ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>
 </script>
 
+<section class="ct-faq-sec">
+  <div class="ct-faq-inner">
+    <h2 class="ct-h2">Catering Questions</h2>
+    <?php foreach ($faqs as $i => $faq) : ?>
+      <details <?php echo $i === 0 ? 'open' : ''; ?>>
+        <summary>
+          <?php echo esc_html($faq['q']); ?>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ct-faq-a"><?php echo esc_html($faq['a']); ?></div>
+      </details>
+    <?php endforeach; ?>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+  BOTTOM BAND
+═══════════════════════════════════════════════ -->
+<section class="ct-band">
+  <div class="ct-band-img">
+    <img class="kb-img" src="/wp-content/uploads/2026/05/TacosBirreaHero-scaled.png" alt="Los Potrillos birria tacos" loading="lazy">
+  </div>
+  <div class="ct-band-body">
+    <div class="ct-band-tagline ct-script">Good Food.<br>Stronger Communities.</div>
+    <div class="ct-band-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15zM5 19c2-4 5-7 9-9"/></svg>
+      Fresh<br>Ingredients
+    </div>
+    <div class="ct-band-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M6.5 20v-2.5a5.5 5.5 0 0 1 11 0V20z"/></svg>
+      Generous<br>Portions
+    </div>
+    <div class="ct-band-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg>
+      Family<br>Owned
+    </div>
+  </div>
+</section>
 
 <?php get_footer(); ?>
