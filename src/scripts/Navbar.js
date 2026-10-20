@@ -19,6 +19,7 @@ function Navbar() {
     { label: "Home",      href: "/",                                                          external: false },
     { label: "Menu",      href: "https://los-potrillos-restaurant.cloveronline.com/menu/all", external: true  },
     { label: "Catering",  href: "/catering",                                                  external: false },
+    { label: "Food Truck", href: "https://foodtruck.restaurantpotrillos.com/",                external: true  },
     { label: "Our Story", href: "/our-story",                                                 external: false },
     { label: "Contact",   href: "/contact",                                                   external: false },
   ]
