@@ -250,7 +250,7 @@ function CateringForm() {
   // ── SUCCESS ──────────────────────────────────────────────────────────────
   if (success) {
     return (
-      <div style={{ ...card, textAlign: "center", padding: "52px 32px" }}>
+      <div id="catering-form-success" style={{ ...card, textAlign: "center", padding: "52px 32px" }}>
         <div style={{
           width: "56px", height: "56px", borderRadius: "50%",
           background: "#f0faf0", border: "2px solid #2e7d32",
