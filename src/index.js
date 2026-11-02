@@ -6,6 +6,7 @@ import Navbar from "./scripts/Navbar"
 import Footer from "./scripts/Footer"
 import CateringForm from "./scripts/CateringForm"
 import FloatingOrderBar from "./scripts/FloatingOrderBar"
+import CookieConsent from "./scripts/CookieConsent"
 
 const person1 = new Person("Brad")
 
@@ -32,4 +33,9 @@ if (document.querySelector("#render-catering-form-here")) {
 if (document.querySelector("#render-floating-bar-here")) {
   const root = ReactDOM.createRoot(document.querySelector("#render-floating-bar-here"))
   root.render(<FloatingOrderBar />)
+}
+
+if (document.querySelector("#render-cookie-consent-here")) {
+  const root = ReactDOM.createRoot(document.querySelector("#render-cookie-consent-here"))
+  root.render(<CookieConsent />)
 }

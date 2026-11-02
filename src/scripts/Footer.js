@@ -114,6 +114,10 @@ function Footer() {
           transition: color 0.2s;
         }
         .pfooter-bottom-link:hover { color: #aaa; }
+        .pfooter-bottom-link-btn {
+          background: none; border: none; padding: 0; margin: 0;
+          font-family: inherit; cursor: pointer;
+        }
 
         /* Inline CTA links inside footer col */
         .pfooter-order-link {
@@ -435,7 +439,14 @@ function Footer() {
               >
                 <a href="/privacy-policy"    className="pfooter-bottom-link">Privacy Policy</a>
                 <a href="/terms-conditions"  className="pfooter-bottom-link">Terms &amp; Conditions</a>
-                <a href="#"           className="pfooter-bottom-link">Site Map</a>
+                <a href="/sitemap"    className="pfooter-bottom-link">Site Map</a>
+                <button
+                  type="button"
+                  className="pfooter-bottom-link pfooter-bottom-link-btn"
+                  onClick={() => window.dispatchEvent(new Event("lp-open-cookie-settings"))}
+                >
+                  Cookie Settings
+                </button>
               </div>
             </div>
           </div>

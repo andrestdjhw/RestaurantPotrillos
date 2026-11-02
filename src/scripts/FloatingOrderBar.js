@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react"
 
 function FloatingOrderBar() {
-  const [visible,   setVisible]   = useState(false)
-  const [dismissed, setDismissed] = useState(false)
+  const [visible,      setVisible]      = useState(false)
+  const [dismissed,    setDismissed]    = useState(false)
+  const [cookieBarUp,  setCookieBarUp]  = useState(false)
+
+  useEffect(() => {
+    const onCookieBanner = (e) => setCookieBarUp(!!e.detail?.visible)
+    window.addEventListener("lp-cookie-banner", onCookieBanner)
+    return () => window.removeEventListener("lp-cookie-banner", onCookieBanner)
+  }, [])
 
   useEffect(() => {
     if (dismissed) return
@@ -78,11 +85,11 @@ function FloatingOrderBar() {
       <style>{`
         .pfloat-bar {
           position: fixed;
-          bottom: 24px;
+          bottom: ${cookieBarUp ? "100px" : "24px"};
           left: 50%;
           transform: translateX(-50%) translateY(${visible ? "0" : "120px"});
           opacity: ${visible ? "1" : "0"};
-          transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
+          transition: bottom 0.3s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
           z-index: 9999;
           display: flex;
           align-items: center;
@@ -169,7 +176,7 @@ function FloatingOrderBar() {
         .pfloat-dismiss:hover { background: rgba(255,255,255,0.2); color: #fff; }
 
         @media (max-width: 600px) {
-          .pfloat-bar { bottom: 16px; padding: 8px 8px 8px 12px; gap: 8px; }
+          .pfloat-bar { bottom: ${cookieBarUp ? "128px" : "16px"}; padding: 8px 8px 8px 12px; gap: 8px; }
           .pfloat-title { font-size: 0.75rem; }
           .pfloat-sub   { display: none; }
           .pfloat-cta   { font-size: 0.68rem; padding: 9px 14px; }
