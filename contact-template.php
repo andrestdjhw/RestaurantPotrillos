@@ -348,6 +348,11 @@ get_header(); ?>
 
 <script>
 (function () {
+  // Same EmailJS project already used by the Catering form — no WP backend required.
+  var EMAILJS_PUBLIC_KEY  = "Et9iu2dz4an-CfbAk"
+  var EMAILJS_SERVICE_ID  = "service_xq04hfa"
+  var EMAILJS_TEMPLATE_ID = "template_bdkb5dz"
+
   const btn     = document.getElementById('co-submit')
   const formWrap= document.getElementById('co-form-wrap')
   const success = document.getElementById('co-success')
@@ -362,7 +367,6 @@ get_header(); ?>
   }
 
   function validate() {
-    let ok = true
     const name    = field('co-name').value.trim()
     const email   = field('co-email').value.trim()
     const subject = field('co-subject').value
@@ -373,8 +377,18 @@ get_header(); ?>
     setErr('co-subject', !subject)
     setErr('co-message', !message)
 
-    if (!name || !email || !/\S+@\S+\.\S+/.test(email) || !subject || !message) ok = false
-    return ok
+    return !!(name && email && /\S+@\S+\.\S+/.test(email) && subject && message)
+  }
+
+  function loadEmailJs() {
+    return new Promise(function (resolve, reject) {
+      if (window.emailjs) { resolve(); return }
+      const s = document.createElement('script')
+      s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js'
+      s.onload = function () { window.emailjs.init(EMAILJS_PUBLIC_KEY); resolve() }
+      s.onerror = reject
+      document.head.appendChild(s)
+    })
   }
 
   btn.addEventListener('click', async function () {
@@ -388,32 +402,46 @@ get_header(); ?>
     btn.disabled     = true
     btn.style.background = '#e8857a'
 
+    const name    = field('co-name').value.trim()
+    const email   = field('co-email').value.trim()
+    const phone   = field('co-phone').value.trim()
+    const subject = field('co-subject').value
+    const message = field('co-message').value.trim()
+
+    const body = [
+      'Name: '    + name,
+      'Email: '   + email,
+      'Phone: '   + (phone || 'N/A'),
+      'Subject: ' + subject,
+      '',
+      message,
+      '',
+      'Source URL: ' + window.location.href,
+    ].join('\n')
+
     try {
-      const body = new FormData()
-      body.append('action',  'submit_contact_form')
-      body.append('nonce',   (window.themeData && window.themeData.nonce) || '')
-      body.append('name',    field('co-name').value.trim())
-      body.append('email',   field('co-email').value.trim())
-      body.append('phone',   field('co-phone').value.trim())
-      body.append('subject', field('co-subject').value)
-      body.append('message', field('co-message').value.trim())
+      await loadEmailJs()
+      await window.emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          subject:    'NEW CONTACT FORM - ' + name + ' - ' + subject,
+          from_name:  name,
+          email:      email,
+          phone:      phone || 'N/A',
+          source_url: window.location.href,
+          message:    body,
+        }
+      )
 
-      const ajaxUrl = (window.themeData && window.themeData.ajaxUrl) || '/wp-admin/admin-ajax.php'
-      const res  = await fetch(ajaxUrl, { method: 'POST', body })
-      const data = await res.json()
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({ event: 'contact_form_submit' })
 
-      if (data.success) {
-        formWrap.style.display = 'none'
-        success.style.display  = 'block'
-      } else {
-        apiErr.textContent    = data.data?.message || 'Something went wrong. Please try again.'
-        apiErr.style.display  = 'block'
-        btn.textContent       = 'Send Message →'
-        btn.disabled          = false
-        btn.style.background  = '#C0392B'
-      }
-    } catch {
-      apiErr.textContent   = 'Network error. Please check your connection and try again.'
+      formWrap.style.display = 'none'
+      success.style.display  = 'block'
+    } catch (e) {
+      console.error('EmailJS error:', e)
+      apiErr.textContent   = 'Something went wrong. Please try again or call us directly.'
       apiErr.style.display = 'block'
       btn.textContent      = 'Send Message →'
       btn.disabled         = false
